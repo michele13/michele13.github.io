@@ -2,6 +2,16 @@ body {
     border: 0px;
     /* text-align: center; */
     box-sizing: border-box;
+    background-color: rgba(43, 107, 226, 60%);
+ }
+
+ .profile {
+    position: relative;
+    height: 25%;
+    width: 25%;
+    top: 0px;
+    margin: 0 37%;
+    border-radius: 50%;
  }
 
  h1, h2, p {
