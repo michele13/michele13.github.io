@@ -1,0 +1,104 @@
+
+@media only screen and (max-width: 800px) {
+    
+        /* --- FIRST SECTION --- */
+    
+    #landing {
+        flex-direction: column;
+        height: 90vh;
+    }
+
+    img.screenshot {
+        width: 90%;
+        height: 90%;
+    }
+
+    .presentation-text {
+        position: relative;
+        text-align: center;
+        padding: 1%;
+    }
+
+    #landing .container-item:nth-of-type(2) {
+        align-items: flex-start;
+    }
+    
+    
+
+
+}
+
+/* 
+    My Tablet width is =< 758px 
+    The iPad Mini is 768px and the desktop layout
+    still looks good
+*/
+
+@media only screen and (max-width: 758px) {
+
+    /* --- NAVBAR --- */
+
+    /* Align the navbar vertically and center everything */
+    .navbar {
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+    
+
+    /* We make the logo half the size */
+
+    .logo {
+        width: 100%;
+        height: 50%;
+    }
+
+    .logo img {
+        height: 50%;
+    }
+
+    /* The other half of the navbar adapts on its own */
+
+    .navbar-right-links a {
+        text-align: center;
+        padding: 0px 5px;
+    }
+
+    /* --- FIRST SECTION --- */
+    
+    #landing {
+        flex-direction: column;
+        height: 90vh;
+    }
+
+    img.screenshot {
+        width: 90%;
+        height: auto;
+    }
+
+    .presentation-text {
+        position: relative;
+        text-align: center;
+        padding: 1%;
+    }
+
+    #landing .container-item:nth-of-type(2) {
+        align-items: flex-start;
+    }
+    #about > div {
+        padding: 2em;
+    }
+    
+    
+    
+}
+
+/* PHONE */
+
+@media  only screen and (max-width: 500px) {
+
+    #about > div {
+      top: 20%;
+    }
+
+}
