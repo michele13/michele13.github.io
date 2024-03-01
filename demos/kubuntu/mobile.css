@@ -95,10 +95,16 @@
 
 /* PHONE */
 
-@media  only screen and (max-width: 500px) {
+@media  only screen and (max-width: 600px) {
 
+    img.screenshot {
+        width: 80%;
+        height: auto;
+    }
+    
     #about > div {
-      top: 20%;
+      top: 10%;
+      transform:translateY(100px);
     }
 
 }
