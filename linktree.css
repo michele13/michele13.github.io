@@ -19,6 +19,12 @@ body {
     margin: 2.5% 25%;
  }
 
+p { font-size: 18px; }
+
+h2 { font-size: 2em; }
+
+h1 { font-size: 3em; }
+
  .linktree {
     list-style-type: none;
     margin: 0 25%;
@@ -55,6 +61,12 @@ body {
     .btn {
      padding: 15% 25% 15% 25%; 
      margin: 10px 25%;
+    }
+
+    .profile {
+        height: 40%;
+        width: 40%;
+        margin: 0 30.8%;
     }
 
     p { margin: 2.5% 5%;}
