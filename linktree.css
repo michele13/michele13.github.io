@@ -3,6 +3,7 @@ body {
     /* text-align: center; */
     box-sizing: border-box;
     background-color: rgba(43, 107, 226, 60%);
+    font-size: 18px;
  }
 
  .profile {
@@ -19,7 +20,7 @@ body {
     margin: 2.5% 25%;
  }
 
-p { font-size: 18px; }
+/* p { font-size: 18px; } */
 
 h2 { font-size: 2em; }
 
