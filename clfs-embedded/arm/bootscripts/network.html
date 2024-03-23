@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      7.8.&nbsp;Configuring the network Script
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="clfs" id="clfs-GIT-20240401-arm">
+    <div class="navheader">
+      <h4>
+        Cross-Compiled Linux From Scratch - Embedded - Version
+        GIT-20240401-arm
+      </h4>
+      <h3>
+        Chapter&nbsp;7.&nbsp;Setting Up System Bootscripts
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="hosts.html" title=
+          "Customizing the /etc/hosts File">Prev</a>
+          <p>
+            Customizing the /etc/hosts File
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="../part5.html" title=
+          "Beyond CLFS Embedded">Next</a>
+          <p>
+            Beyond CLFS Embedded
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;7.&nbsp;Setting Up System Bootscripts">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-arm">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-scripts-network" name="ch-scripts-network"></a>7.8.
+        Configuring the network Script
+      </h1>
+      <div class="sect2" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          7.8.1. Creating Network Interface Configuration Files
+        </h2>
+        <p>
+          Which interfaces are brought up and down by the network utilities
+          depends on the files and directories in the <code class=
+          "filename">/etc/network</code> directory. The <code class=
+          "filename">interfaces</code> file should contain a description of
+          the interfaces, as done by Debian, and each of the directories
+          contain scripts for actions to perform on each type of network
+          event.
+        </p>
+        <p>
+          The following command creates the required directories and the
+          <code class="filename">interfaces</code> file, assuming DHCP will
+          be used for eth0:
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">mkdir -pv ${CLFS}/targetfs/etc/network/if-{post-{up,down},pre-{up,down},up,down}.d
+mkdir -pv ${CLFS}/targetfs/usr/share/udhcpc
+
+cat &gt; ${CLFS}/targetfs/etc/network/interfaces &lt;&lt; "EOF"
+<code class="literal">auto eth0
+iface eth0 inet dhcp</code>
+EOF</kbd></pre>
+        <p>
+          For DHCP to work properly with udhcpc, the BusyBox dhcp client, a
+          configuration script is needed. Create a simple script to assign
+          the provided DHCP address and update <code class=
+          "filename">/etc/resolv.conf</code>:
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">cat &gt; ${CLFS}/targetfs/usr/share/udhcpc/default.script &lt;&lt; "EOF"
+<code class="literal">#!/bin/sh
+# udhcpc Interface Configuration
+# Based on http://lists.debian.org/debian-boot/2002/11/msg00500.html
+# udhcpc script edited by Tim Riker &lt;Tim@Rikers.org&gt;
+
+[ -z "$1" ] &amp;&amp; echo "Error: should be called from udhcpc" &amp;&amp; exit 1
+
+RESOLV_CONF="/etc/resolv.conf"
+[ -n "$broadcast" ] &amp;&amp; BROADCAST="broadcast $broadcast"
+[ -n "$subnet" ] &amp;&amp; NETMASK="netmask $subnet"
+
+case "$1" in
+        deconfig)
+                /sbin/ifconfig $interface 0.0.0.0
+                ;;
+
+        renew|bound)
+                /sbin/ifconfig $interface $ip $BROADCAST $NETMASK
+
+                if [ -n "$router" ] ; then
+                        while route del default gw 0.0.0.0 dev $interface ; do
+                                true
+                        done
+
+                        for i in $router ; do
+                                route add default gw $i dev $interface
+                        done
+                fi
+
+                echo -n &gt; $RESOLV_CONF
+                [ -n "$domain" ] &amp;&amp; echo search $domain &gt;&gt; $RESOLV_CONF
+                for i in $dns ; do
+                        echo nameserver $i &gt;&gt; $RESOLV_CONF
+                done
+                ;;
+esac
+
+exit 0
+</code>EOF
+
+chmod +x ${CLFS}/targetfs/usr/share/udhcpc/default.script</kbd></pre>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="hosts.html" title=
+          "Customizing the /etc/hosts File">Prev</a>
+          <p>
+            Customizing the /etc/hosts File
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="../part5.html" title=
+          "Beyond CLFS Embedded">Next</a>
+          <p>
+            Beyond CLFS Embedded
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;7.&nbsp;Setting Up System Bootscripts">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-arm">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

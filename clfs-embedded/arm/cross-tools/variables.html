@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      4.3.&nbsp;Build Variables
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="clfs" id="clfs-GIT-20240401-arm">
+    <div class="navheader">
+      <h4>
+        Cross-Compiled Linux From Scratch - Embedded - Version
+        GIT-20240401-arm
+      </h4>
+      <h3>
+        Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="cflags.html" title="Build CFLAGS">Prev</a>
+          <p>
+            Build CFLAGS
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="sysroot.html" title=
+          "Create the Cross Tools Sysroot Directory">Next</a>
+          <p>
+            Create the Cross Tools Sysroot Directory
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-arm">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-cross-tools-variables" name=
+        "ch-cross-tools-variables"></a>4.3. Build Variables
+      </h1>
+      <h4>
+        Setting Host and Target
+      </h4>
+      <p>
+        During the building of the cross-compile tools, you will need to set
+        a few variables that will be dependent on your particular needs. You
+        will need to select the target triplet for the target architecture,
+        the CPU architecture, the CPU floating point hardware availability,
+        and (if available) the type of floating point hardware. If you do not
+        know what values can be chosen for each of these, you can use the
+        tables as a reference.
+      </p>
+      <p>
+        If your processor is an ARM9, good choices include: triplet of
+        arm-linux-musleabi, ARM arch of armv5t, and float of soft. ARM9
+        processors do not usually have hardware floating point abilities. If
+        your processor is a Cortex-A series, which often have hardware
+        floating point capability, good choices include: triplet of
+        arm-linux-musleabihf, ARM arch of armv7-a, float of hard, and fpu of
+        vfpv3-d16.
+      </p>
+      <p>
+        If your target CPU has hardware floating point support (not all ARM
+        CPUs do), then set the following CLFS_FLOAT variable to either "hard"
+        or "softfp". Use "softfp" if you need to integrate binaries compiled
+        with "soft". Use "hard" if you don't. If your target CPU does not
+        have hard floating point support, set the following CLFS_FLOAT
+        vairable to "soft".
+      </p>
+      <pre class="userinput"><kbd class=
+      "command">export CLFS_FLOAT="<em class=
+      "replaceable"><code>[hard, softfp, or soft]"</code></em></kbd></pre>
+      <p>
+        If you chose either "hard" or "softfp" for CLFS_FLOAT, you now need
+        to set which floating point hardware is actually included (see table
+        below) with your ARM CPU:
+      </p>
+      <pre class="userinput"><kbd class="command">export CLFS_FPU="<em class=
+      "replaceable"><code>[fpu version]</code></em>"</kbd></pre>
+      <div class="table">
+        <a id="idm1058" name="idm1058"></a>
+        <p class="title">
+          <b>Table&nbsp;4.1.&nbsp;ARM Hard Floating Point Versions</b>
+        </p>
+        <div class="table-contents">
+          <table summary="ARM Hard Floating Point Versions" border="1">
+            <colgroup>
+              <col />
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td>
+                  fpa
+                </td>
+                <td>
+                  fpe2
+                </td>
+                <td>
+                  fpe3
+                </td>
+                <td>
+                  maverick
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  vfp
+                </td>
+                <td>
+                  vfpv3
+                </td>
+                <td>
+                  vfpv3-fp16
+                </td>
+                <td>
+                  vfpv3-d16
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  vfpv3-d16-fp16
+                </td>
+                <td>
+                  vfpv3xd
+                </td>
+                <td>
+                  vfpv3xd-fp16
+                </td>
+                <td>
+                  neon
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  neon-fp16
+                </td>
+                <td>
+                  vfpv4
+                </td>
+                <td>
+                  vfpv4-d16
+                </td>
+                <td>
+                  fpv4-sp-d16
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  neon-vfpv4
+                </td>
+                <td class="auto-generated">
+                  &nbsp;
+                </td>
+                <td class="auto-generated">
+                  &nbsp;
+                </td>
+                <td class="auto-generated">
+                  &nbsp;
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div><br class="table-break" />
+      <p>
+        Then, set the host and target triplets:
+      </p>
+      <pre class="userinput"><kbd class=
+      "command">export CLFS_HOST=$(echo ${MACHTYPE} | sed "s/-[^-]*/-cross/")
+export CLFS_TARGET="<em class=
+"replaceable"><code>[target triplet]</code></em>"</kbd></pre>
+      <div class="table">
+        <a id="idm1092" name="idm1092"></a>
+        <p class="title">
+          <b>Table&nbsp;4.2.&nbsp;Target Triplets</b>
+        </p>
+        <div class="table-contents">
+          <table summary="Target Triplets" border="1">
+            <colgroup>
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>
+                  Float Type
+                </th>
+                <th>
+                  Triplet
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  soft or softfp
+                </td>
+                <td>
+                  arm-linux-musleabi
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  hard
+                </td>
+                <td>
+                  arm-linux-musleabihf
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div><br class="table-break" />
+      <p>
+        Now set the architecture of the CPU:
+      </p>
+      <pre class="userinput"><kbd class=
+      "command">export CLFS_ARCH=arm</kbd></pre>
+      <p>
+        Choose the ARM architecture (see table below):
+      </p>
+      <pre class="userinput"><kbd class=
+      "command">export CLFS_ARM_ARCH="<em class=
+      "replaceable"><code>[architecture]</code></em>"</kbd></pre>
+      <div class="table">
+        <a id="idm1115" name="idm1115"></a>
+        <p class="title">
+          <b>Table&nbsp;4.3.&nbsp;ARM Archiecture Choices</b>
+        </p>
+        <div class="table-contents">
+          <table summary="ARM Archiecture Choices" border="1">
+            <colgroup>
+              <col />
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td>
+                  armv4t
+                </td>
+                <td>
+                  armv5
+                </td>
+                <td>
+                  armv5t
+                </td>
+                <td>
+                  armv5te
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  armv6
+                </td>
+                <td>
+                  armv6j
+                </td>
+                <td>
+                  armv6t2
+                </td>
+                <td>
+                  armv6z
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  armv6zk
+                </td>
+                <td>
+                  armv6-m
+                </td>
+                <td>
+                  armv7
+                </td>
+                <td>
+                  armv7-a
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  armv7-r
+                </td>
+                <td>
+                  armv7-m
+                </td>
+                <td class="auto-generated">
+                  &nbsp;
+                </td>
+                <td class="auto-generated">
+                  &nbsp;
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div><br class="table-break" />
+      <p>
+        Now we will add this to <code class="filename">~/.bashrc</code>, just
+        in case you have to exit and restart building later:
+      </p>
+      <pre class="userinput"><kbd class=
+      "command">echo export CLFS_HOST=\""${CLFS_HOST}\"" &gt;&gt; ~/.bashrc
+echo export CLFS_TARGET=\""${CLFS_TARGET}\"" &gt;&gt; ~/.bashrc
+echo export CLFS_ARCH=\""${CLFS_ARCH}\"" &gt;&gt; ~/.bashrc
+echo export CLFS_ARM_ARCH=\""${CLFS_ARM_ARCH}\"" &gt;&gt; ~/.bashrc
+echo export CLFS_FLOAT=\""${CLFS_FLOAT}\"" &gt;&gt; ~/.bashrc
+echo export CLFS_FPU=\""${CLFS_FPU}\"" &gt;&gt; ~/.bashrc</kbd></pre>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="cflags.html" title="Build CFLAGS">Prev</a>
+          <p>
+            Build CFLAGS
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="sysroot.html" title=
+          "Create the Cross Tools Sysroot Directory">Next</a>
+          <p>
+            Create the Cross Tools Sysroot Directory
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-arm">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

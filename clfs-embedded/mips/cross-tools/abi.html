@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      4.3.&nbsp;ABI Variables
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="clfs" id="clfs-GIT-20240401-mips">
+    <div class="navheader">
+      <h4>
+        Cross-Compiled Linux From Scratch - Embedded - Version
+        GIT-20240401-mips
+      </h4>
+      <h3>
+        Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="cflags.html" title="Build CFLAGS">Prev</a>
+          <p>
+            Build CFLAGS
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="variables.html" title=
+          "Build Variables">Next</a>
+          <p>
+            Build Variables
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-mips">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-abi" name="ch-system-abi"></a>4.3. ABI Variables
+      </h1>
+      <p>
+        Setup for a Particular ABI:
+      </p>
+      <pre class="userinput"><kbd class="command">export CLFS_ABI="<em class=
+      "replaceable"><code>[From Chart]</code></em>"
+echo export CLFS_ABI=\""${CLFS_ABI}\"" &gt;&gt; ~/.bashrc</kbd></pre>
+      <p>
+        The following table gives the entires for the different ABI's that
+        CLFS Embedded supports. Make sure you select one for your build, this
+        will ensure capatibilty of your build with your target architecture.
+      </p>
+      <div class="table">
+        <a id="idm1052" name="idm1052"></a>
+        <p class="title">
+          <b>Table&nbsp;4.1.&nbsp;List of Build Variables</b>
+        </p>
+        <div class="table-contents">
+          <table summary="List of Build Variables" border="1">
+            <colgroup>
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>
+                  ABI
+                </th>
+                <th>
+                  CLFS_ABI=Value
+                </th>
+                <th>
+                  Notes
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  O32
+                </td>
+                <td>
+                  32
+                </td>
+                <td>
+                  For 32 bit CPUs only
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  N32
+                </td>
+                <td>
+                  n32
+                </td>
+                <td>
+                  For 64 bit CPUs operating in 32 bit mode
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  N64
+                </td>
+                <td>
+                  64
+                </td>
+                <td>
+                  For 64 bit CPUs operating in 64 bit mode
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div><br class="table-break" />
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="cflags.html" title="Build CFLAGS">Prev</a>
+          <p>
+            Build CFLAGS
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="variables.html" title=
+          "Build Variables">Next</a>
+          <p>
+            Build Variables
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-mips">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
