@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      4.4.&nbsp;Create the Cross Tools Sysroot Directory
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="clfs" id="clfs-GIT-20240401-arm">
+    <div class="navheader">
+      <h4>
+        Cross-Compiled Linux From Scratch - Embedded - Version
+        GIT-20240401-arm
+      </h4>
+      <h3>
+        Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="variables.html" title=
+          "Build Variables">Prev</a>
+          <p>
+            Build Variables
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="linux-headers.html" title=
+          "Linux-Headers-6.7.4">Next</a>
+          <p>
+            Linux-Headers-6.7.4
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-arm">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-cross-tools-sysroot" name="ch-cross-tools-sysroot"></a>4.4.
+        Create the Cross Tools Sysroot Directory
+      </h1>
+      <p>
+        Create a sysroot directory which will be used when building the cross
+        compiler and link its <code class="filename">usr</code> directory to
+        itself such that everything installs to the sysroot:
+      </p>
+      <pre class="userinput"><kbd class=
+      "command">mkdir -p ${CLFS}/cross-tools/${CLFS_TARGET}
+ln -sfv . ${CLFS}/cross-tools/${CLFS_TARGET}/usr</kbd></pre>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="variables.html" title=
+          "Build Variables">Prev</a>
+          <p>
+            Build Variables
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="linux-headers.html" title=
+          "Linux-Headers-6.7.4">Next</a>
+          <p>
+            Linux-Headers-6.7.4
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-arm">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

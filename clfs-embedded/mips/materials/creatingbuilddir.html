@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      2.2.&nbsp;Creating Build and Sources Directories
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="clfs" id="clfs-GIT-20240401-mips">
+    <div class="navheader">
+      <h4>
+        Cross-Compiled Linux From Scratch - Embedded - Version
+        GIT-20240401-mips
+      </h4>
+      <h3>
+        Chapter&nbsp;2.&nbsp;Build Directory, Packages, and Patches
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="introduction.html" title=
+          "Introduction">Prev</a>
+          <p>
+            Introduction
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="packages.html" title="All Packages">Next</a>
+          <p>
+            All Packages
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;2.&nbsp;Build Directory, Packages, and Patches">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-mips">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-materials-creatingbuilddir" name=
+        "ch-materials-creatingbuilddir"></a>2.2. Creating Build and Sources
+        Directories
+      </h1>
+      <p>
+        Create a directory for the CLFS build. The exact location is up to
+        you but depending on the location you choose, you may need to do this
+        as the root user:
+      </p>
+      <pre class="userinput"><kbd class=
+      "command">sudo mkdir -p /mnt/clfs</kbd></pre>
+      <p>
+        Assign it to the <code class="envar">CLFS</code> environment
+        variable:
+      </p>
+      <pre class="userinput"><kbd class=
+      "command">export CLFS=/mnt/clfs</kbd></pre>
+      <p>
+        Ensure that this new directory has permissions that are not too
+        restrictive such that you can write to it as a non-root user.
+        Depending on the location of the <code class="envar">CLFS</code>
+        directory, you may need to do this as the root user:
+      </p>
+      <pre class="userinput"><kbd class=
+      "command">sudo chmod 777 ${CLFS}</kbd></pre>
+      <p>
+        Downloaded packages and patches will need to be stored somewhere that
+        is conveniently available throughout the entire build. A working
+        directory is also required to unpack the sources and build them.
+        <code class="filename">${CLFS}/sources</code> can be used both as the
+        place to store the tarballs and patches and as a working directory.
+      </p>
+      <p>
+        Create a directory to store the sources:
+      </p>
+      <pre class="userinput"><kbd class=
+      "command">mkdir -v ${CLFS}/sources</kbd></pre>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="introduction.html" title=
+          "Introduction">Prev</a>
+          <p>
+            Introduction
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="packages.html" title="All Packages">Next</a>
+          <p>
+            All Packages
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;2.&nbsp;Build Directory, Packages, and Patches">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-mips">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

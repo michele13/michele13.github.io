@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      7.2.&nbsp;CLFS-Bootscripts-git master HEAD
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="clfs" id="clfs-GIT-20240401-mips">
+    <div class="navheader">
+      <h4>
+        Cross-Compiled Linux From Scratch - Embedded - Version
+        GIT-20240401-mips
+      </h4>
+      <h3>
+        Chapter&nbsp;7.&nbsp;Setting Up System Bootscripts
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="introduction.html" title=
+          "Introduction">Prev</a>
+          <p>
+            Introduction
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="mdev.html" title="Configure mdev">Next</a>
+          <p>
+            Configure mdev
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;7.&nbsp;Setting Up System Bootscripts">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-mips">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-scripts-bootscripts" name="ch-scripts-bootscripts"></a>7.2.
+        CLFS-Bootscripts-git master HEAD
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          The CLFS-Bootscripts package contains a set of scripts to
+          start/stop the CLFS system at bootup/shutdown.
+        </p>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          7.2.1. Installation of CLFS-Bootscripts
+        </h2>
+        <div class="admon important">
+          <img alt="[Important]" src="../images/important.png" />
+          <h3>
+            Important
+          </h3>
+          <p>
+            Unlike other chapters, after installing the bootscripts, do not
+            delete the bootscripts source directory. The bootscripts source
+            directory may be needed later.
+          </p>
+        </div>
+        <p>
+          Install the package:
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">make DESTDIR=${CLFS}/targetfs install-bootscripts</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-bootscripts" name="contents-bootscripts"></a>7.2.2.
+          Contents of CLFS-Bootscripts
+        </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">Installed scripts:</strong>
+              <span class="segbody">functions, startup, shutdown, and
+              syslog.</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            Short Descriptions
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="functions-bootscripts" name=
+                    "functions-bootscripts"></a><span class=
+                    "term"><span class=
+                    "command"><strong>functions</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    Contains common functions, such as error and status
+                    checking, that are used by several bootscripts
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="startup-bootscripts" name=
+                    "startup-bootscripts"></a><span class="term"><span class=
+                    "command"><strong>startup</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    Performs all startup script operations
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="shutdown-bootscripts" name=
+                    "shutdown-bootscripts"></a><span class=
+                    "term"><span class="command"><strong>shutdown</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    Performs all shutdown operations
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <a id="syslog-bootscripts" name=
+                    "syslog-bootscripts"></a><span class="term"><span class=
+                    "command"><strong>syslog</strong></span></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    Starts and stops the system log daemons
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="introduction.html" title=
+          "Introduction">Prev</a>
+          <p>
+            Introduction
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="mdev.html" title="Configure mdev">Next</a>
+          <p>
+            Configure mdev
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;7.&nbsp;Setting Up System Bootscripts">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-mips">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
