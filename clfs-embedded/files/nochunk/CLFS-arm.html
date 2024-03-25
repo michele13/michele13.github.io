@@ -921,7 +921,7 @@
           </li>
           <li class="index">
             <h3>
-              <a href="#idm2559">Index</a>
+              <a href="#idm2570">Index</a>
             </h3>
           </li>
         </ul>
@@ -1567,6 +1567,39 @@ EOF</kbd></pre>
               <b>Changelog Entries:</b>
             </p>
             <ul>
+              <li>
+                <p>
+                  March 25, 2024
+                </p>
+                <div class="itemizedlist">
+                  <ul>
+                    <li>
+                      <p>
+                        [michele13] - We can now build all busybox applets
+                        with no problems.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        [michele13] - Added symlink /init pointing to
+                        bin/busybox in ${CLFS}/targetfs/.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        [michele13] - Fixed instructions for unpacking gmp
+                        mpc and mpfr during the toolchain build.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        [michele13] - Fixed instructions for building
+                        dropbear.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </li>
               <li>
                 <p>
                   March 23, 2024
@@ -4047,7 +4080,7 @@ echo unset CFLAGS &gt;&gt; ~/.bashrc</kbd></pre>
               </div>
             </div>
             <h5>
-              <a id="idm1047" name="idm1047"></a>Setting Host and Target
+              <a id="idm1058" name="idm1058"></a>Setting Host and Target
             </h5>
             <p>
               During the building of the cross-compile tools, you will need
@@ -4088,7 +4121,7 @@ echo unset CFLAGS &gt;&gt; ~/.bashrc</kbd></pre>
             "command">export CLFS_FPU="<em class=
             "replaceable"><code>[fpu version]</code></em>"</kbd></pre>
             <div class="table">
-              <a id="idm1058" name="idm1058"></a>
+              <a id="idm1069" name="idm1069"></a>
               <p class="title">
                 <b>Table&nbsp;4.1.&nbsp;ARM Hard Floating Point Versions</b>
               </p>
@@ -4183,7 +4216,7 @@ echo unset CFLAGS &gt;&gt; ~/.bashrc</kbd></pre>
 export CLFS_TARGET="<em class=
 "replaceable"><code>[target triplet]</code></em>"</kbd></pre>
             <div class="table">
-              <a id="idm1092" name="idm1092"></a>
+              <a id="idm1103" name="idm1103"></a>
               <p class="title">
                 <b>Table&nbsp;4.2.&nbsp;Target Triplets</b>
               </p>
@@ -4236,7 +4269,7 @@ export CLFS_TARGET="<em class=
             "command">export CLFS_ARM_ARCH="<em class=
             "replaceable"><code>[architecture]</code></em>"</kbd></pre>
             <div class="table">
-              <a id="idm1115" name="idm1115"></a>
+              <a id="idm1126" name="idm1126"></a>
               <p class="title">
                 <b>Table&nbsp;4.3.&nbsp;ARM Archiecture Choices</b>
               </p>
@@ -4394,7 +4427,7 @@ cp -rv usr/include ${CLFS}/cross-tools/${CLFS_TARGET}</kbd></pre>
               </div>
               <div class="variablelist">
                 <h4>
-                  <a id="idm1172" name="idm1172"></a>Short Descriptions
+                  <a id="idm1183" name="idm1183"></a>Short Descriptions
                 </h4>
                 <table border="0">
                   <col align="left" valign="top" />
@@ -4575,7 +4608,7 @@ make</kbd></pre>
               </div>
               <div class="variablelist">
                 <h4>
-                  <a id="idm1247" name="idm1247"></a>Short Descriptions
+                  <a id="idm1258" name="idm1258"></a>Short Descriptions
                 </h4>
                 <table border="0">
                   <col align="left" valign="top" />
@@ -4906,9 +4939,9 @@ make</kbd></pre>
                 after unpacking GCC:
               </p>
               <pre class="userinput"><kbd class=
-              "command">tar xf ../mpfr-4.2.1.tar.bz2
+              "command">tar xf ../mpfr-4.2.1.tar.xz
 mv -v mpfr-4.2.1 mpfr
-tar xf ../gmp-6.3.0.tar.bz2
+tar xf ../gmp-6.3.0.tar.xz
 mv -v gmp-6.3.0 gmp
 tar xf ../mpc-1.3.1.tar.gz
 mv -v mpc-1.3.1 mpc</kbd></pre>
@@ -5288,7 +5321,7 @@ cd ../gcc-build</kbd></pre>
               </div>
               <div class="variablelist">
                 <h4>
-                  <a id="idm1560" name="idm1560"></a>Short Descriptions
+                  <a id="idm1571" name="idm1571"></a>Short Descriptions
                 </h4>
                 <table border="0">
                   <col align="left" valign="top" />
@@ -5423,9 +5456,9 @@ cd ../gcc-build</kbd></pre>
                 after unpacking GCC:
               </p>
               <pre class="userinput"><kbd class=
-              "command">tar xf ../mpfr-4.2.1.tar.bz2
+              "command">tar xf ../mpfr-4.2.1.tar.xz
 mv -v mpfr-4.2.1 mpfr
-tar xf ../gmp-6.3.0.tar.bz2
+tar xf ../gmp-6.3.0.tar.xz
 mv -v gmp-6.3.0 gmp
 tar xf ../mpc-1.3.1.tar.gz
 mv -v mpc-1.3.1 mpc</kbd></pre>
@@ -5525,7 +5558,7 @@ cd ../gcc-build</kbd></pre>
               </div>
               <div class="variablelist">
                 <h4>
-                  <a id="idm1658" name="idm1658"></a>Short Descriptions
+                  <a id="idm1669" name="idm1669"></a>Short Descriptions
                 </h4>
                 <table border="0">
                   <col align="left" valign="top" />
@@ -6181,25 +6214,11 @@ chmod -v 664 ${CLFS}/targetfs/var/log/lastlog</kbd></pre>
               <pre class="userinput"><kbd class=
               "command">make ARCH="${CLFS_ARCH}" defconfig</kbd></pre>
               <p>
-                Disable building both ifplugd and inetd as they both have
-                issues building against musl:
-              </p>
-              <pre class="userinput"><kbd class=
-              "command">sed -i 's/\(CONFIG_\)\(.*\)\(INETD\)\(.*\)=y/# \1\2\3\4 is not set/g' .config
-sed -i 's/\(CONFIG_IFPLUGD\)=y/# \1 is not set/' .config</kbd></pre>
-              <p>
                 Disable the use of utmp/wtmp as musl does not support them:
               </p>
               <pre class="userinput"><kbd class=
               "command">sed -i 's/\(CONFIG_FEATURE_WTMP\)=y/# \1 is not set/' .config
 sed -i 's/\(CONFIG_FEATURE_UTMP\)=y/# \1 is not set/' .config</kbd></pre>
-              <p>
-                Disable the use of ipsvd for both TCP and UDP as it has
-                issues building against musl (similar to inetd's issues):
-              </p>
-              <pre class="userinput"><kbd class=
-              "command">sed -i 's/\(CONFIG_UDPSVD\)=y/# \1 is not set/' .config
-sed -i 's/\(CONFIG_TCPSVD\)=y/# \1 is not set/' .config</kbd></pre>
               <p>
                 Compile the package:
               </p>
@@ -6208,9 +6227,12 @@ sed -i 's/\(CONFIG_TCPSVD\)=y/# \1 is not set/' .config</kbd></pre>
               <p>
                 Install the package:
               </p>
-              <pre class="userinput"><kbd class=
-              "command">make ARCH="${CLFS_ARCH}" CROSS_COMPILE="${CLFS_TARGET}-"\
-  CONFIG_PREFIX="${CLFS}/targetfs" install</kbd></pre>
+              <pre class="userinput">
+<kbd class=
+"command">make ARCH="${CLFS_ARCH}" CROSS_COMPILE="${CLFS_TARGET}-"\
+  CONFIG_PREFIX="${CLFS}/targetfs" install</kbd>
+<kbd class="command">ln -sv bin/busybox ${CLFS}/targetfs/init</kbd>
+</pre>
               <p>
                 If you're going to build your kernel with modules, you will
                 need to make sure <span class=
@@ -6279,7 +6301,7 @@ chmod -v 755 ${CLFS}/cross-tools/bin/depmod.pl</kbd></pre>
               </div>
               <div class="variablelist">
                 <h4>
-                  <a id="idm1968" name="idm1968"></a>Short Descriptions
+                  <a id="idm1974" name="idm1974"></a>Short Descriptions
                 </h4>
                 <table border="0">
                   <col align="left" valign="top" />
@@ -6535,7 +6557,7 @@ EOF</kbd></pre>
               </div>
               <div class="variablelist">
                 <h4>
-                  <a id="idm2058" name="idm2058"></a>Short Descriptions
+                  <a id="idm2064" name="idm2064"></a>Short Descriptions
                 </h4>
                 <table border="0">
                   <col align="left" valign="top" />
@@ -6769,7 +6791,7 @@ EOF</kbd></pre>
               </div>
               <div class="variablelist">
                 <h4>
-                  <a id="idm2135" name="idm2135"></a>Short Descriptions
+                  <a id="idm2141" name="idm2141"></a>Short Descriptions
                 </h4>
                 <table border="0">
                   <col align="left" valign="top" />
@@ -7514,7 +7536,7 @@ ln -sv libz.so.1.3.1 ${CLFS}/targetfs/lib/libz.so.1</kbd></pre>
               </div>
               <div class="variablelist">
                 <h4>
-                  <a id="idm2371" name="idm2371"></a>Short Descriptions
+                  <a id="idm2377" name="idm2377"></a>Short Descriptions
                 </h4>
                 <table border="0">
                   <col align="left" valign="top" />
@@ -7646,6 +7668,20 @@ ln -sv libz.so.1.3.1 ${CLFS}/targetfs/lib/libz.so.1</kbd></pre>
                   We are just telling dropbear to use the default
                   configuration plus scp. For those who are more adventurous,
                   edit options.h to further configure dropbear.
+                </p>
+              </div>
+              <div class="admon important">
+                <h3>
+                  Important
+                </h3>
+                <p>
+                  If you get a compile error regarding an <span class=
+                  "emphasis"><em>undefined reference to
+                  `__stack_chk_fail_local'</em></span> run <strong class=
+                  "userinput"><code>make distclean</code></strong> and add
+                  <strong class=
+                  "userinput"><code>--disable-harden</code></strong> to the
+                  configure command before proceding.
                 </p>
               </div>
               <p>

@@ -88,6 +88,20 @@
             further configure dropbear.
           </p>
         </div>
+        <div class="admon important">
+          <img alt="[Important]" src="../images/important.png" />
+          <h3>
+            Important
+          </h3>
+          <p>
+            If you get a compile error regarding an <span class=
+            "emphasis"><em>undefined reference to
+            `__stack_chk_fail_local'</em></span> run <strong class=
+            "userinput"><code>make distclean</code></strong> and add
+            <strong class="userinput"><code>--disable-harden</code></strong>
+            to the configure command before proceding.
+          </p>
+        </div>
         <p>
           Compile the package:
         </p>
