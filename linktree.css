@@ -50,7 +50,7 @@ h1 { font-size: 3em; }
     background-color: rgb(89, 89, 152)
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1366px) {
     .btn {
         padding: 10% 10% 10% 10%;
         margin: 10px 25% 10px 41%;
