@@ -1,0 +1,48 @@
+html, body {
+	font-family: Calibri;
+	font-size: 16px;
+	margin: 0px;
+}
+
+div {
+border: 1px solid black;
+}
+
+
+.contatti {
+	background-color: #EC5598;
+	color: white;
+	width: 100%;
+	height: 45px;
+	text-align: right;	
+}
+
+.contatti a {
+	text-decoration: none;
+	color: white;
+	line-height: 45px;
+	margin: 5px;
+
+}
+
+.list-inline {
+	list-style: none;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.list-inline a {
+	text-decoration: none;
+	color: white;
+}
+
+.list-inline li {
+	display: inline;
+	margin: 3px;
+}
+
+.menu {
+	width: 100%;
+	height: 130px;
+	background-color: white;
+}
