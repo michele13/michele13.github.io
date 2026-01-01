@@ -1,6 +1,13 @@
 # The URL the site will be built for
 base_url = "https://michele13.github.io"
 
+# Website title
+
+title = "Michele Bucca"
+
+# theme
+theme = "kodama-theme"
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
@@ -12,5 +19,35 @@ build_search_index = true
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
 
+[translations]
+Biography = "Biography"
+Interests = "Interests"
+Education = "Education"
+toc = "Table of Contents"
+Published = "Published"
+Abstract = "Abstract"
+volume = "volume"
+number = "number"
+pages = "pages"
+
+
 [extra]
 # Put all your custom variables here
+
+# Image of your avatar displayed on the landing page
+avatar = 'static/profile.jpg'
+
+# Image of the favicon
+favicon = 'static/profile.jpg'
+
+# Your email address showed in the contact section
+email = 'michele.bucca@gmail.com'
+
+# If you don't want to show your contact information in the index
+contact_in_index = false
+
+# Additional menu items
+# `Name` is what it is displayed, `path` is the url
+menu_items = [
+  { path = "#contacts", name = "Contact" },
+]
