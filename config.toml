@@ -44,7 +44,7 @@ favicon = 'static/profile.jpg'
 email = 'michele.bucca@gmail.com'
 
 # If you don't want to show your contact information in the index
-contact_in_index = false
+contact_in_index = true
 
 # Additional menu items
 # `Name` is what it is displayed, `path` is the url
