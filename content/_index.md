@@ -4,7 +4,7 @@
 [extra]
 
 # Show a concise description of what you do below your avatar.
-title = "Concise description"
+title = ""
 
 # The list of interests displayed
 interests = [
