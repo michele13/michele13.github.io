@@ -3,6 +3,7 @@ title = "Frontend Portfolio"
 sort_by = "date"
 template = "section.html"
 page_template = "blog-page.html"
+weight = 3
 +++
 
 ## Summary
