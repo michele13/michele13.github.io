@@ -11,4 +11,4 @@ A simple CV written in simple HTML and CSS, ready to print. I created it because
 
 [Live demo](/CV/index.html)
 [Download PDF](/CV/CV.pdf)
-[Source code](https://github.com/michele13/michele13.github.com)
+[Source code](https://github.com/michele13/michele13.github.io/tree/main/CV/)
