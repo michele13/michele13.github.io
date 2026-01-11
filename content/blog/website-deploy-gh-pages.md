@@ -70,6 +70,9 @@ jobs:
 I also made sure to give Github actions the permissions to write to write to the repo:
 
 
-in **Settings -> Actions -> General** I **allowed michele13 (myself) actions and reusable workflows** and  enabled read/write permissions on **Workflow permissions** while keeping disabled the option: **Allow GitHub Actions to create and approve pull requests**.
+inside the repo go in **Settings -> Actions -> General**, I checked **allow michele13 actions and reusable workflows** (michele13 is my username) and  enabled **read/write** permissions on **Workflow permissions**.  
+I kept disabled the option: **Allow GitHub Actions to create and approve pull requests**.
+
+After pushing the code to the main branch I let the action run, then I went again into my repo Settings -> Pages. I selected **Deploy from a branch**, chose the **gh-pages** branch, selected **/ (root)** as folder and clicked **Save**.
 
 Now it's finally working!
