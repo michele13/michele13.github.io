@@ -1,6 +1,6 @@
 +++
 title = "Web Development Portfolio"
-date = 2026-01-02
+date = 2024-12-20
 draft = false
 description = "A collection of exercies and experiments to practice Frontend Development"
 +++
