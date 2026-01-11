@@ -9,6 +9,6 @@ A simple CV written in simple HTML and CSS, ready to print. I created it because
 
 ![linktree](/img/CV.jpg)
 
-[Live demo](/CV/index.html)
+<a target="_blank" href="/CV/index.html">Live demo</a>
 [Download PDF](/CV/CV.pdf)
-[Source code](https://github.com/michele13/michele13.github.io/tree/main/CV/)
+<a target="_blank" href="https://github.com/michele13/michele13.github.io/tree/main/static/CV/">Source code</a>

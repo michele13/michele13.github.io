@@ -9,5 +9,5 @@ A simple landing page that mimicks the design of [linktr.ee](https://linktr.ee/)
 
 ![linktree](/img/demos/linktree.png)
 
-[Live demo](/demos/linktree/index.html)
-[Source code](https://github.com/michele13/michele13.github.io/tree/main/demos/linktree/)
+<a target="_blank" href="/demos/linktree/index.html">Live demo</a>
+<a target="_blank" href="https://github.com/michele13/michele13.github.io/tree/main/static/demos/linktree/">Source code</a>

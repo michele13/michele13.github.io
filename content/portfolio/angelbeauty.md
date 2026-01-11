@@ -13,5 +13,5 @@ This is just an exercise to make a reproduction of a website, it is not intended
 
 ![angelbeauty](/img/demos/angelbeauty.png)
 
-[Live demo](/demos/angelbeauty/index.html)
-[Source code](https://github.com/michele13/michele13.github.io/tree/main/demos/angelbeauty/)
+<a target="_blank" href="/demos/angelbeauty/index.html">Live Demo</a>
+<a target="_blank" href="https://github.com/michele13/michele13.github.io/tree/main/static/demos/angelbeauty/">Source Code</a>

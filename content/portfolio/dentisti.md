@@ -9,7 +9,6 @@ After taking a one-month bootcamp on Frontend Web Development, as an exercise, i
 
 ![dentisti](/img/demos/dentisti.png)
 
-
-[Live demo](/demos/dentisti/index.html)
-[Source code](https://github.com/michele13/michele13.github.io/tree/main/demos/dentisti/)
-[Current Website](https://orsinidentalproject.it/)
+<a target="_blank" href="/demos/dentisti/index.html">Live Demo</a>
+<a target="_blank" href="https://github.com/michele13/michele13.github.io/tree/main/static/demos/dentisti/">Source code</a>
+<a target="_blank" href="https://orsinidentalproject.it/">Current Website</a>

@@ -9,5 +9,5 @@ An exercise that we did during a Frontend Web Development Bootcamp on October 20
 
 ![lorem](/img/demos/lorem.png)
 
-[Live demo](/demos/lorem/index.html)
-[Source code](https://github.com/michele13/michele13.github.io/tree/main/demos/lorem/)
+<a target="_blank" href="/demos/lorem/index.html">Live demo</a>
+<a target="_blank" href="https://github.com/michele13/michele13.github.io/tree/main/static/demos/lorem/">Source code</a>

@@ -13,5 +13,5 @@ Desktop Version
 Mobile Version
 ![kubuntu mobile](/img/demos/kubuntu_mobile.png "Kubuntu Mobile")
 
-[Live demo](/demos/kubuntu/index.html)
-[Source code](https://github.com/michele13/michele13.github.io/tree/main/demos/kubuntu/)
+<a target="_blank" href="/demos/kubuntu/index.html">Live demo</a>
+<a target="_blank" href="https://github.com/michele13/michele13.github.io/tree/main/static/demos/kubuntu/">Source code</a>
