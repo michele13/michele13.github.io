@@ -18,4 +18,4 @@ extra.publications_types = [
 
 ## Topic of interest
 
-My research activities focuses on building toolchains and linux systems.
+My research activities focus on building toolchains and linux systems from source code.
