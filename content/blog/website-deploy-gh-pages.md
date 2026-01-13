@@ -1,8 +1,8 @@
 +++
-title = "I've finally deployied my website on Github pages"
+title = "I've finally deployed my website on Github pages"
 date = 2026-01-11
 description = """
-Some notes on how I deployied my websited built with Zola on Github Pages
+Some notes on how I deployed my websited built with Zola on Github Pages
 """
 +++
 
