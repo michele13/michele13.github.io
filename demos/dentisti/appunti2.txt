@@ -1,0 +1,9 @@
+https://stackoverflow.com/questions/35074511/wrong-vertical-alignment-of-inline-block-divs
+
+https://www.webmousers.com/it/web/centrare-un-div-dentro-un-altro-div-5-metodi-per-centrare-un-div-in-orizzontale-e-in-verticale-in-un-51
+
+https://www.html.it/articoli/css-flexbox/
+
+https://meet.google.com/linkredirect?authuser=0&dest=https%3A%2F%2Fwww.w3schools.com%2Fcss%2Fcss3_flexbox_container.asp
+
+https://jsfiddle.net/su0cbwkr/3/

@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      5.6.&nbsp;BusyBox-1.36.1
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="clfs" id="clfs-GIT-20240401-arm">
+    <div class="navheader">
+      <h4>
+        Cross-Compiled Linux From Scratch - Embedded - Version
+        GIT-20240401-arm
+      </h4>
+      <h3>
+        Chapter&nbsp;5.&nbsp;Installing Basic System Software
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="libc.html" title="musl-1.2.5">Prev</a>
+          <p>
+            musl-1.2.5
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="iana-etc.html" title=
+          "iana-etc-20240125">Next</a>
+          <p>
+            iana-etc-20240125
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;5.&nbsp;Installing Basic System Software">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-arm">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-system-busybox" name="ch-system-busybox"></a>5.6.
+        BusyBox-1.36.1
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          BusyBox combines tiny versions of many common UNIX utilities into a
+          single small executable. It provides replacements for most of the
+          utilities you usually find in GNU fileutils, shellutils, etc. The
+          utilities in BusyBox generally have fewer options than their
+          full-featured GNU cousins; however, the options that are included
+          provide the expected functionality and behave very much like their
+          GNU counterparts. BusyBox provides a fairly complete environment
+          for any small or embedded system.
+        </p>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          5.6.1. Installation of BusyBox
+        </h2>
+        <p>
+          First ensure the BusyBox source is completely clean:
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">make distclean</kbd></pre>
+        <div class="admon note">
+          <img alt="[Note]" src="../images/note.png" />
+          <h3>
+            Note
+          </h3>
+          <p>
+            We tell BusyBox to use the generic defconfig. For those who are
+            more adventurous, you can use <span class="command"><strong>make
+            menuconfig</strong></span>, and create a custom or modified
+            configuration for your build.
+          </p>
+        </div>
+        <p>
+          The following tells BusyBox to use the default configuration:
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">make ARCH="${CLFS_ARCH}" defconfig</kbd></pre>
+        <p>
+          Disable the use of utmp/wtmp as musl does not support them:
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">sed -i 's/\(CONFIG_FEATURE_WTMP\)=y/# \1 is not set/' .config
+sed -i 's/\(CONFIG_FEATURE_UTMP\)=y/# \1 is not set/' .config</kbd></pre>
+        <p>
+          Compile the package:
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">make ARCH="${CLFS_ARCH}" CROSS_COMPILE="${CLFS_TARGET}-"</kbd></pre>
+        <p>
+          Install the package:
+        </p>
+        <pre class="userinput">
+<kbd class=
+"command">make ARCH="${CLFS_ARCH}" CROSS_COMPILE="${CLFS_TARGET}-"\
+  CONFIG_PREFIX="${CLFS}/targetfs" install</kbd>
+<kbd class="command">ln -sv bin/busybox ${CLFS}/targetfs/init</kbd>
+</pre>
+        <p>
+          If you're going to build your kernel with modules, you will need to
+          make sure <span class="command"><strong>depmod.pl</strong></span>
+          is available for your host to execute:
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">cp -v examples/depmod.pl ${CLFS}/cross-tools/bin
+chmod -v 755 ${CLFS}/cross-tools/bin/depmod.pl</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-busybox" name="contents-busybox"></a>5.6.2.
+          Contents of BusyBox
+        </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">Installed programs:</strong>
+              <span class="segbody">To be Written</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="libc.html" title="musl-1.2.5">Prev</a>
+          <p>
+            musl-1.2.5
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="iana-etc.html" title=
+          "iana-etc-20240125">Next</a>
+          <p>
+            iana-etc-20240125
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;5.&nbsp;Installing Basic System Software">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-arm">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

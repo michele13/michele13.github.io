@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* border: 1px solid black; */
+}
+
+/* Animated Transitions */
+
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    font-size: 18px;
+}
+
+.hidden {
+    transition: opacity 1s;
+    opacity: 0;
+}
+
+/* ************  */
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    position: sticky;
+    top:0;
+    width: 100%;
+    height: 10vh;
+    justify-content: space-evenly;
+    background-color: white;
+    z-index: 1;
+}
+
+
+
+
+.navbar-right-links, .logo {
+    display: flex;
+    height: 100%;
+    width: 50%;
+}
+
+/* Logo */
+
+.logo {
+   
+    /* Alignes vertically an element */
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.logo img {
+    width: auto;
+    height: 90%;
+    margin: 5px;
+}
+
+
+/* Navbar Links - the mess starts here */
+
+.navbar-right-links {
+    justify-content: center;
+    /* align-items: center; */
+ }
+
+ 
+ 
+
+.navbar-right-links a {
+    display: flex;
+    text-decoration: none;
+    width: 100%;
+    color: black;
+}
+
+.navlink {
+    display: flex;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+
+    /* padding: 1.3em 2.8em; */
+    flex: 1 auto;
+}
+
+.navlink a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-right-links .active, .navbar-right-links .navlink:hover {
+    border-bottom: 3px solid rgb(43, 43, 110);
+}
+
+/* Downloads Menu */
+
+.navbar-menu {
+    display: none;
+    flex-direction: column;
+    top: 10vh;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    width: fit-content;
+    box-shadow: 4px 4px 4px 0px;
+ }
+
+ .navbar-menu a {
+    display: inline-flex;
+    color: black;
+    position: relative;
+    line-height: 3em;
+    justify-content: center ;
+    border-bottom: 1px solid black;
+    /* add a little space between the text
+     and the border of the menu */
+    padding: 0 2px;
+ }
+
+ .navbar-menu a:hover {
+    background-color: lightskyblue;
+ }
+
+ .navlink:hover .navbar-menu {
+    display: flex;
+ }
+
+/* ************  */
+
+
+/* Main Content */
+
+
+/* .main-content {
+    display: block;
+    position: fixed;
+    top: 10vh;
+    height: 90vh;
+    flex-direction: column;
+    width: 100%;
+    overflow: scroll;
+} */
+
+.container {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    /* justify-content: space-evenly; */
+    
+    /* 
+    Does Flex have a z-index > than 0? 
+    YES! https://medium.com/@syogifse/solve-your-z-index-issues-6f97539502a9
+    */
+    /* z-index: -1; */
+}
+
+.container-item {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    /* Vertical Align */
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* First Section - Landing */
+
+#landing {
+    color:aliceblue;
+    /* background-color: rgb(43, 43, 110); */
+    background-color: rgba(23, 90, 159, 77%);
+    height: 90vh;
+}
+
+img.screenshot {
+    width: 90%;
+    height: auto;
+}
+
+.presentation-text {
+    /* width: 100%; */
+    padding-left: 3%;
+    line-height: 3em;
+}
+
+
+.button {
+    background-color:rgb(43, 43, 110);
+    text-decoration: none;
+    padding: 5%;
+    color: white
+}
+
+/* Second Section - About */
+
+#about {
+    background-image: url('assets/kubuntu-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+#about > div {
+   display: block;
+   position: absolute;
+   top: 38%;
+   width: 100%;
+   padding: 0 10em;
+   justify-content: center; 
+   justify-items: center;
+   flex-direction: column;
+   line-height: auto;
+   line-height: 1.3;
+   opacity: 0;
+   transform: translateY(150px);
+   transition: all 1s ;
+}
+
+#about > div.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#about p {
+    margin-bottom: 0.35em;
+}
+
+#about h2 {
+    margin-bottom: 0.5em ;
+    text-align: center;
+}

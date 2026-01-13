@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      4.5.&nbsp;Linux-Headers-6.7.4
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="clfs" id="clfs-GIT-20240401-arm">
+    <div class="navheader">
+      <h4>
+        Cross-Compiled Linux From Scratch - Embedded - Version
+        GIT-20240401-arm
+      </h4>
+      <h3>
+        Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="sysroot.html" title=
+          "Create the Cross Tools Sysroot Directory">Prev</a>
+          <p>
+            Create the Cross Tools Sysroot Directory
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="binutils.html" title=
+          "Binutils-2.42">Next</a>
+          <p>
+            Binutils-2.42
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-arm">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-cross-tools-linux-headers" name=
+        "ch-cross-tools-linux-headers"></a>4.5. Linux-Headers-6.7.4
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          The Linux Kernel contains a make target that installs
+          &ldquo;<span class="quote">sanitized</span>&rdquo; kernel headers.
+        </p>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          4.5.1. Installation of Linux Headers
+        </h2>
+        <p>
+          For this step you will need the kernel tarball.
+        </p>
+        <p>
+          Install the header files that are common to all architectures:
+        </p>
+        <pre class="userinput"><kbd class="command">make mrproper
+make ARCH=${CLFS_ARCH} headers
+find usr/include -type f ! -name '*.h' -delete
+cp -rv usr/include ${CLFS}/cross-tools/${CLFS_TARGET}</kbd></pre>
+      </div>
+      <div class="content" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          <a id="contents-linux-headers" name=
+          "contents-linux-headers"></a>4.5.2. Contents of Linux-Headers
+        </h2>
+        <div class="segmentedlist">
+          <div class="seglistitem">
+            <div class="seg">
+              <strong class="segtitle">Installed headers:</strong>
+              <span class=
+              "segbody">${CLFS}/cross-tools/${CLFS_TARGET}/include/{asm,asm-generic,drm,linux,mtd,rdma,scsi,sound,video,xen}/*.h</span>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <h3>
+            Short Descriptions
+          </h3>
+          <table border="0">
+            <col align="left" valign="top" />
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <a id="linux-headers" name=
+                    "linux-headers"></a><span class="term"><code class=
+                    "filename">${CLFS}/cross-tools/${CLFS_TARGET}/include/{asm,asm-generic,drm,linux,mtd,rdma,scsi,sound,video,xen}/*.h</code></span>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    The Linux API headers
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="sysroot.html" title=
+          "Create the Cross Tools Sysroot Directory">Prev</a>
+          <p>
+            Create the Cross Tools Sysroot Directory
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="binutils.html" title=
+          "Binutils-2.42">Next</a>
+          <p>
+            Binutils-2.42
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-arm">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

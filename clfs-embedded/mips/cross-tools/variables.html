@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      4.4.&nbsp;Build Variables
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="clfs" id="clfs-GIT-20240401-mips">
+    <div class="navheader">
+      <h4>
+        Cross-Compiled Linux From Scratch - Embedded - Version
+        GIT-20240401-mips
+      </h4>
+      <h3>
+        Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="abi.html" title="ABI Variables">Prev</a>
+          <p>
+            ABI Variables
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="sysroot.html" title=
+          "Create the Cross Tools Sysroot Directory">Next</a>
+          <p>
+            Create the Cross Tools Sysroot Directory
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-mips">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-cross-tools-variables" name=
+        "ch-cross-tools-variables"></a>4.4. Build Variables
+      </h1>
+      <h4>
+        Setting Host and Target
+      </h4>
+      <p>
+        During the building of the cross-compile tools you will need to set a
+        few variables that will be dependent on your particular needs. You
+        will need to set the target triplet for the target architecture, the
+        MIPS level, and CPU endianess. If you do not know what triplet or
+        level you want, you can use the table as a reference. Set the command
+        using the method listed below:
+      </p>
+      <pre class="userinput"><kbd class=
+      "command">export CLFS_HOST=$(echo ${MACHTYPE} | sed "s/-[^-]*/-cross/")
+export CLFS_TARGET="<em class=
+"replaceable"><code>[target triplet]</code></em>"</kbd></pre>
+      <div class="table">
+        <a id="idm1094" name="idm1094"></a>
+        <p class="title">
+          <b>Table&nbsp;4.2.&nbsp;Processor Type and Target Triplets</b>
+        </p>
+        <div class="table-contents">
+          <table summary="Processor Type and Target Triplets" border="1">
+            <colgroup>
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>
+                  Processor
+                </th>
+                <th>
+                  Target Triplet
+                </th>
+                <th>
+                  MIPS Level
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  MIPS 32 bits Little Endian
+                </td>
+                <td>
+                  mipsel-linux-musl
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  MIPS 32 bits Big Endian
+                </td>
+                <td>
+                  mips-linux-musl
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  MIPS 64 bits Little Endian
+                </td>
+                <td>
+                  mips64el-linux-musl
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  MIPS 64 bits Big Endian
+                </td>
+                <td>
+                  mips64-linux-musl
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div><br class="table-break" />
+      <p>
+        Now we will set the architecture and endianess of the CPU based on
+        the target triplet provided above:
+      </p>
+      <pre class="userinput"><kbd class="command">export CLFS_ARCH=mips
+export CLFS_ENDIAN=$(echo ${CLFS_ARCH} | sed -e 's/mipsel/little/' -e 's/mips/big/')</kbd></pre>
+      <p>
+        Now you will need to set the MIPS LEVEL. This determines how your GCC
+        and C library are built. There are currently 5 MIPS ISA Levels. To
+        keep things simple we are only using two. For more information, see
+        <a class="ulink" href=
+        "http://www.linux-mips.org/wiki/Instruction_Set_Architecture">http://www.linux-mips.org/wiki/Instruction_Set_Architecture</a>
+      </p>
+      <pre class="userinput"><kbd class=
+      "command">export CLFS_MIPS_LEVEL="<em class=
+      "replaceable"><code>[mips level]</code></em>"</kbd></pre>
+      <p>
+        We also need to select the floating point capability of the CPU. If
+        the CPU has built-in hardware for performing floating point
+        calculations, choose "hard", otherwise choose "soft":
+      </p>
+      <pre class="userinput"><kbd class=
+      "command">export CLFS_FLOAT="<em class=
+      "replaceable"><code>[hard or soft]</code></em>"</kbd></pre>
+      <p>
+        Now we will add this to <code class="filename">~/.bashrc</code>, just
+        in case you have to exit and restart building later:
+      </p>
+      <pre class="userinput"><kbd class=
+      "command">echo export CLFS_HOST=\""${CLFS_HOST}\"" &gt;&gt; ~/.bashrc
+echo export CLFS_TARGET=\""${CLFS_TARGET}\"" &gt;&gt; ~/.bashrc
+echo export CLFS_ARCH=\""${CLFS_ARCH}\"" &gt;&gt; ~/.bashrc
+echo export CLFS_ENDIAN=\""${CLFS_ENDIAN}\"" &gt;&gt; ~/.bashrc
+echo export CLFS_MIPS_LEVEL=\""${CLFS_MIPS_LEVEL}\"" &gt;&gt; ~/.bashrc
+echo export CLFS_FLOAT=\""${CLFS_FLOAT}\"" &gt;&gt; ~/.bashrc</kbd></pre>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="abi.html" title="ABI Variables">Prev</a>
+          <p>
+            ABI Variables
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="sysroot.html" title=
+          "Create the Cross Tools Sysroot Directory">Next</a>
+          <p>
+            Create the Cross Tools Sysroot Directory
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-mips">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
