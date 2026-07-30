@@ -18,11 +18,11 @@
   {% endif -%}
   <article class="prose prose-indigo max-w-3xl">
   {% if page.taxonomies.categories or page.taxonomies.tags %}
-  <div class="post-taxonomies">
+  <div class="post-taxonomies" style="margin-bottom: 1rem">
     
     {% if page.taxonomies.categories %}
       <span class="categories">
-        <strong>Categorie:</strong>
+        <strong>Categories:</strong>
         {% for cat in page.taxonomies.categories %}
           <a href="{{ get_taxonomy_url(kind="categories", name=cat) }}">{{ cat }}</a>{% if not loop.last %}, {% endif %}
         {% endfor %}
@@ -31,7 +31,7 @@
 
     {% if page.taxonomies.tags %}
       <span class="tags">
-        <strong>Tag:</strong>
+        <strong>Tags:</strong>
         {% for tag in page.taxonomies.tags %}
           <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
         {% endfor %}
@@ -40,6 +40,7 @@
 
   </div>
 {% endif %}
+
     {{ macros::toc() }}
     {{ page.content | safe }}
     {% if page.extra.external_link %}<p><a href="{{page.extra.external_link | safe}}" target="_blank">{{page.extra.external_link | safe}}</a></p>{% endif -%}

@@ -4,6 +4,9 @@ date = 2026-01-11
 description = """
 Some notes on how I deployed my websited built with Zola on Github Pages
 """
+[taxonomies]
+categories = ["zola"]
+tags = ["zola"]
 +++
 
 Recently, as you read on my [previous post](/blog/hello-world), I've built my new website using Zola.
