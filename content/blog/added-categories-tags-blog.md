@@ -14,7 +14,7 @@ Yesterday I thought about adding categories and tags to my blog so that I can wr
 
 To make things more organized every post will have many tags but *only one* category.
 
-To achieve this we will use the feature called [taxonomy](#). Let's begin the setup.
+To achieve this we will use the feature called [taxonomy](https://www.getzola.org/documentation/content/taxonomies/). Let's begin the setup.
 
 ## Step 1 - Edit `config.toml`
 
