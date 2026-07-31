@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <link rel="shortcut icon" href="https:&#x2F;&#x2F;michele13.github.io&#x2F;processed_images&#x2F;profile.88dd5ba93cdc36e0.png" type="image/png">
+  <link rel="icon" href="https:&#x2F;&#x2F;michele13.github.io&#x2F;processed_images&#x2F;profile.88dd5ba93cdc36e0.png" type="image/png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta charset="utf-8">
+
+  <!-- Custom header for users, includes custom css or js here -->
+  <title> Michele Bucca</title>
+
+  
+<!-- CSS -->
+<link rel="stylesheet" href="https://michele13.github.io/styles/styles.css" />
+
+    <title>Blog |  Michele Bucca</title>
+</head>
+
+<body class="bg-white">
+  <!-- Top nav bar -->
+  
+<nav id="header" class="w-full z-10 top-0 shadow-md mx-0">
+  <div id="progress" class="top-0"></div>
+  <!-- <div class="w-full max-w-5xl mx-auto flex flex-wrap items-center justify-between mt-0 py-2  sm:bg-green-900 md:bg-red-900 lg:bg-blue-900 bg-yellow-900"> -->
+  <div class="w-full max-w-4xl mx-auto flex sm:flex-nowrap flex-wrap items-center justify-between mt-0 py-2">
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold" href="https:&#x2F;&#x2F;michele13.github.io/">
+        Michele Bucca
+      </a>
+    </div>
+
+    <div class="w-full grow sm:flex sm:items-center flex-wrap sm:flex-nowrap sm:w-auto mt-2 sm:mt-0 bg-transparent z-20" id="nav-content">
+      <ul class="list-reset flex flex-wrap sm:justify-end flex-1 items-center">
+          <li class="mr-3 text-sm">
+              <a href="https://michele13.github.io/blog" class="inline-block py-2 px-4 text-sky-600 font-bold no-underline">
+                Blog
+              </a>
+            </li>
+            <li class="mr-3 text-sm">
+              <a href="https://michele13.github.io/projects" class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4">
+                Projects
+              </a>
+            </li>
+            <li class="mr-3 text-sm">
+              <a href="https://michele13.github.io/publications" class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4">
+                Research
+              </a>
+            </li>
+            <li class="mr-3 text-sm">
+              <a href="https://michele13.github.io/portfolio" class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4">
+                Frontend Portfolio
+              </a>
+            </li>
+            <li class="mr-3 text-sm">
+            <a href=https://michele13.github.io/./tags class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4">
+              Tags
+            </a>
+          </li>
+          <li class="mr-3 text-sm">
+            <a href=https://michele13.github.io/./categories class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4">
+              Categories
+            </a>
+          </li>
+          <li class="mr-3 text-sm">
+            <a href=https://michele13.github.io/#contacts class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4">
+              Contact
+            </a>
+          </li>
+          </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Container -->
+  
+<div class="container max-w-3xl mx-auto px-4">
+  <div class="pt-8 flex">
+  
+    <h1 class="grow font-bold font-sans break-normal text-gray-900 text-3xl">I&#x27;ve finally deployed my website on Github pages</h1>
+    <p class="text-sm md:text-base font-normal text-gray-600 py-2">Published 2026-01-11</p>
+  </div>
+  <hr class="border-b border-gray-400 mb-8">
+  <article class="prose prose-indigo max-w-3xl">
+  
+  <div class="post-taxonomies" style="margin-bottom: 1rem">
+    
+    
+      <span class="categories">
+        <strong>Categories:</strong>
+        
+          <a href="https://michele13.github.io/categories/zola/">zola</a>
+        
+      </span>
+    
+
+    
+      <span class="tags">
+        <strong>Tags:</strong>
+        
+          <a href="https://michele13.github.io/tags/zola/">zola</a>
+        
+      </span>
+    
+
+  </div>
+
+
+    
+    <p>Recently, as you read on my <a href="/blog/hello-world">previous post</a>, I've built my new website using Zola.
+Yesterday I've tried to deploy it to github pages using the instructions on the <a href="https://web.archive.org/web/20251116072637/https://www.getzola.org/documentation/deployment/github-pages/" target="_blank">official page (archived)</a></p>
+<blockquote>
+<p><strong>Note:</strong>
+The webpage has been updated!
+<a target="_blank" href="https://www.getzola.org/documentation/deployment/github-pages/">See official page</a>.</p>
+</blockquote>
+<p>I've used the instructions of this <a target="_blank" href="https://github.com/shalzz/zola-deploy-action">Github action</a> but unfortunately it did not work well and my website bloke, displaying a 404 error:</p>
+<p><img src="/img/404.jpg" alt="404" /></p>
+<p>This was my original <code>.github/worklows/main.yml</code> file:</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="yaml"><span class="giallo-l"><span style="color: #79B8FF;">on</span><span>:</span><span style="color: #9ECBFF;"> push</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">jobs</span><span>:</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">  build_and_deploy</span><span>:</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">    runs-on</span><span>:</span><span style="color: #9ECBFF;"> ubuntu-latest</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">    if</span><span>:</span><span style="color: #9ECBFF;"> github.ref == &#39;refs/heads/main&#39;</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">    steps</span><span>:</span></span>
+<span class="giallo-l"><span>      -</span><span style="color: #85E89D;"> name</span><span>:</span><span style="color: #9ECBFF;"> &#39;checkout&#39;</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">        uses</span><span>:</span><span style="color: #9ECBFF;"> actions/checkout@v4</span></span>
+<span class="giallo-l"><span>      -</span><span style="color: #85E89D;"> name</span><span>:</span><span style="color: #9ECBFF;"> &#39;build and deploy&#39;</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">        uses</span><span>:</span><span style="color: #9ECBFF;"> shalzz/zola-deploy-action@master</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">        env</span><span>:</span></span>
+<span class="giallo-l"><span style="color: #6A737D;">          # Target Branch</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">          PAGES_BRANCH</span><span>:</span><span style="color: #9ECBFF;"> gh-pages</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">          TOKEN</span><span>:</span><span style="color: #9ECBFF;"> ${{ secrets.GITHUB_TOKEN }}</span></span></code></pre>
+<p>But it needed to be updated with the following lines</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="yaml"><span class="giallo-l"><span style="color: #85E89D;">permissions</span><span>:</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">  contents</span><span>:</span><span style="color: #9ECBFF;"> write</span></span></code></pre>
+<p>and limit the execution of the action only when I uploaded code to the main branch.
+The new version is much more clean:</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="yaml"><span class="giallo-l"><span style="color: #79B8FF;">on</span><span>:</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">  push</span><span>:</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">    branches</span><span>: </span></span>
+<span class="giallo-l"><span>    -</span><span style="color: #9ECBFF;"> main</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">permissions</span><span>:</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">  contents</span><span>:</span><span style="color: #9ECBFF;"> write</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">jobs</span><span>:</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">  build_and_deploy</span><span>:</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">    runs-on</span><span>:</span><span style="color: #9ECBFF;"> ubuntu-latest</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">    steps</span><span>:</span></span>
+<span class="giallo-l"><span>      -</span><span style="color: #85E89D;"> name</span><span>:</span><span style="color: #9ECBFF;"> &#39;checkout&#39;</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">        uses</span><span>:</span><span style="color: #9ECBFF;"> actions/checkout@v4</span></span>
+<span class="giallo-l"><span>      -</span><span style="color: #85E89D;"> name</span><span>:</span><span style="color: #9ECBFF;"> &#39;build and deploy&#39;</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">        uses</span><span>:</span><span style="color: #9ECBFF;"> shalzz/zola-deploy-action@master</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">        env</span><span>:</span></span>
+<span class="giallo-l"><span style="color: #6A737D;">          # Target Branch</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">          PAGES_BRANCH</span><span>:</span><span style="color: #9ECBFF;"> gh-pages</span></span>
+<span class="giallo-l"><span style="color: #85E89D;">          TOKEN</span><span>:</span><span style="color: #9ECBFF;"> ${{ secrets.GITHUB_TOKEN }}</span></span></code></pre>
+<p>I also made sure to give Github actions the permissions to write to write to the repo:</p>
+<p>inside the repo go in <strong>Settings -&gt; Actions -&gt; General</strong>, I checked <strong>allow michele13 actions and reusable workflows</strong> (michele13 is my username) and  enabled <strong>read/write</strong> permissions on <strong>Workflow permissions</strong>.<br />
+I kept disabled the option: <strong>Allow GitHub Actions to create and approve pull requests</strong>.</p>
+<p>After pushing the code to the main branch I let the action run, then I went again into my repo Settings -&gt; Pages. I selected <strong>Deploy from a branch</strong>, chose the <strong>gh-pages</strong> branch, selected <strong>/ (root)</strong> as folder and clicked <strong>Save</strong>.</p>
+<p>Now it's finally working!</p>
+
+    </article>
+</div>
+<!-- <div class="sticky bottom-0 px-3">
+    <a href="#page-top">Back to top of page</a>
+  </div> -->
+  <footer class="bg-white">
+    <div class="bg-white text-gray-400 container max-w-4xl mx-auto my-8 px-4">
+    © Michele Bucca. Template <a class="underline" target="_blank" href="https://github.com/adfaure/kodama-theme">Kodama</a> made with <a class="underline" target="_blank" href="https://getzola.org">zola</a>, inspired by <a class="underline" target="_blank" href="https://wowchemy.com/"> wowchemy</a> academic theme.
+    </div>
+  </footer>
+  </body>
+
+</html>

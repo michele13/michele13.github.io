@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <link rel="shortcut icon" href="https:&#x2F;&#x2F;michele13.github.io&#x2F;processed_images&#x2F;profile.88dd5ba93cdc36e0.png" type="image/png">
+  <link rel="icon" href="https:&#x2F;&#x2F;michele13.github.io&#x2F;processed_images&#x2F;profile.88dd5ba93cdc36e0.png" type="image/png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta charset="utf-8">
+
+  <!-- Custom header for users, includes custom css or js here -->
+  <title> Michele Bucca</title>
+
+  
+<!-- CSS -->
+<link rel="stylesheet" href="https://michele13.github.io/styles/styles.css" />
+
+    <title>Blog |  Michele Bucca</title>
+</head>
+
+<body class="bg-white">
+  <!-- Top nav bar -->
+  
+<nav id="header" class="w-full z-10 top-0 shadow-md mx-0">
+  <div id="progress" class="top-0"></div>
+  <!-- <div class="w-full max-w-5xl mx-auto flex flex-wrap items-center justify-between mt-0 py-2  sm:bg-green-900 md:bg-red-900 lg:bg-blue-900 bg-yellow-900"> -->
+  <div class="w-full max-w-4xl mx-auto flex sm:flex-nowrap flex-wrap items-center justify-between mt-0 py-2">
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold" href="https:&#x2F;&#x2F;michele13.github.io/">
+        Michele Bucca
+      </a>
+    </div>
+
+    <div class="w-full grow sm:flex sm:items-center flex-wrap sm:flex-nowrap sm:w-auto mt-2 sm:mt-0 bg-transparent z-20" id="nav-content">
+      <ul class="list-reset flex flex-wrap sm:justify-end flex-1 items-center">
+          <li class="mr-3 text-sm">
+              <a href="https://michele13.github.io/blog" class="inline-block py-2 px-4 text-sky-600 font-bold no-underline">
+                Blog
+              </a>
+            </li>
+            <li class="mr-3 text-sm">
+              <a href="https://michele13.github.io/projects" class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4">
+                Projects
+              </a>
+            </li>
+            <li class="mr-3 text-sm">
+              <a href="https://michele13.github.io/publications" class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4">
+                Research
+              </a>
+            </li>
+            <li class="mr-3 text-sm">
+              <a href="https://michele13.github.io/portfolio" class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4">
+                Frontend Portfolio
+              </a>
+            </li>
+            <li class="mr-3 text-sm">
+            <a href=https://michele13.github.io/./tags class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4">
+              Tags
+            </a>
+          </li>
+          <li class="mr-3 text-sm">
+            <a href=https://michele13.github.io/./categories class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4">
+              Categories
+            </a>
+          </li>
+          <li class="mr-3 text-sm">
+            <a href=https://michele13.github.io/#contacts class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4">
+              Contact
+            </a>
+          </li>
+          </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Container -->
+  
+<div class="container max-w-3xl mx-auto px-4">
+  <div class="pt-8 flex">
+  
+    <h1 class="grow font-bold font-sans break-normal text-gray-900 text-3xl">I&#x27;ve added tags and categories to the website</h1>
+    <p class="text-sm md:text-base font-normal text-gray-600 py-2">Published 2026-07-30</p>
+  </div>
+  <hr class="border-b border-gray-400 mb-8">
+  <article class="prose prose-indigo max-w-3xl">
+  
+  <div class="post-taxonomies" style="margin-bottom: 1rem">
+    
+    
+      <span class="categories">
+        <strong>Categories:</strong>
+        
+          <a href="https://michele13.github.io/categories/zola/">zola</a>
+        
+      </span>
+    
+
+    
+      <span class="tags">
+        <strong>Tags:</strong>
+        
+          <a href="https://michele13.github.io/tags/zola/">zola</a>
+        
+      </span>
+    
+
+  </div>
+
+
+    
+    <p>Yesterday I thought about adding categories and tags to my blog so that I can write small technical blog posts on this website and sort them by topic.</p>
+<p>To make things more organized every post will have many tags but <em>only one</em> category.</p>
+<p>To achieve this we will use the feature called <a rel="external" href="https://www.getzola.org/documentation/content/taxonomies/">taxonomy</a>. Let's begin the setup.</p>
+<h2 id="step-1-edit-config-toml">Step 1 - Edit <code>config.toml</code><a class="zola-anchor" href="#step-1-edit-config-toml" aria-label="Anchor link for: step-1-edit-config-toml">🔗</a></h2>
+<p>Edit <code>config.toml</code> with a text editor and add the following text before the first <code>[section]</code>:</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="toml"><span class="giallo-l"><span>taxonomies = [</span></span>
+<span class="giallo-l"><span> { name =</span><span style="color: #9ECBFF;"> &quot;categories&quot;</span><span>, feed =</span><span style="color: #79B8FF;"> true</span><span> },</span></span>
+<span class="giallo-l"><span> { name =</span><span style="color: #9ECBFF;"> &quot;tags&quot;</span><span>, feed =</span><span style="color: #79B8FF;"> true</span><span> }</span></span>
+<span class="giallo-l"><span>]</span></span></code></pre>
+<p>If you already have other taxonomies, just add the lines that contain the curly brackets, but don't forget to add the comma to the second line!</p>
+<p>Now, add the links for <strong>Tags</strong> and <strong>Categories</strong> to the <code>menu_items</code> section</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #FDAEB7;font-style: italic;">// ...</span></span>
+<span class="giallo-l"><span>[</span><span style="color: #B392F0;">extra</span><span>]</span></span>
+<span class="giallo-l"><span>menu_items = [</span></span>
+<span class="giallo-l"><span style="color: #FDAEB7;font-style: italic;">// ...</span></span>
+<span class="giallo-l"><span>{ path =</span><span style="color: #9ECBFF;"> &quot;./tags/&quot;</span><span>, name =</span><span style="color: #9ECBFF;"> &quot;Tags&quot;</span><span> },</span></span>
+<span class="giallo-l"><span>{ path =</span><span style="color: #9ECBFF;"> &quot;./categories/&quot;</span><span>, name =</span><span style="color: #9ECBFF;"> &quot;Categories&quot;</span><span> },</span></span>
+<span class="giallo-l"><span style="color: #FDAEB7;font-style: italic;">// ...</span></span>
+<span class="giallo-l"><span>]</span></span></code></pre><h2 id="step-2-add-tags-and-categories-to-an-article">Step 2 - Add tags and categories to an article<a class="zola-anchor" href="#step-2-add-tags-and-categories-to-an-article" aria-label="Anchor link for: step-2-add-tags-and-categories-to-an-article">🔗</a></h2>
+<p>Open an article or blog post and add the <strong>categories</strong> and <strong>tags</strong> in the <strong>taxonomies section</strong> at the end of the front matter:</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="toml"><span class="giallo-l"><span>[</span><span style="color: #B392F0;">taxonomies</span><span>]</span></span>
+<span class="giallo-l"><span>categories = [</span><span style="color: #9ECBFF;">&quot;zola&quot;</span><span>]</span></span>
+<span class="giallo-l"><span>tags = [</span><span style="color: #9ECBFF;">&quot;zola&quot;</span><span>]</span></span></code></pre>
+<p>Now it looks like this:</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #FDAEB7;font-style: italic;">+++</span></span>
+<span class="giallo-l"><span>title =</span><span style="color: #9ECBFF;"> &quot;I&#39;ve added tags and categories to the website&quot;</span></span>
+<span class="giallo-l"><span>date =</span><span style="color: #79B8FF;"> 2026-07-30</span></span>
+<span class="giallo-l"><span>description =</span><span style="color: #9ECBFF;"> &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span style="color: #9ECBFF;">I&#39;ve added tags and categories to the website thanks to taxonomies</span></span>
+<span class="giallo-l"><span style="color: #9ECBFF;">&quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span>[</span><span style="color: #B392F0;">taxonomies</span><span>]</span></span>
+<span class="giallo-l"><span>categories = [</span><span style="color: #9ECBFF;">&quot;zola&quot;</span><span>]</span></span>
+<span class="giallo-l"><span>tags = [</span><span style="color: #9ECBFF;">&quot;zola&quot;</span><span>]</span></span>
+<span class="giallo-l"><span style="color: #FDAEB7;font-style: italic;">+++</span></span></code></pre><h2 id="step-3-edit-the-theme-so-that-it-shows-tags-and-categories-on-every-blog-page">Step 3 - Edit the theme so that it shows tags and categories on every blog page<a class="zola-anchor" href="#step-3-edit-the-theme-so-that-it-shows-tags-and-categories-on-every-blog-page" aria-label="Anchor link for: step-3-edit-the-theme-so-that-it-shows-tags-and-categories-on-every-blog-page">🔗</a></h2>
+<p>Copy the template called <code>blog-page.html</code> from your theme (in my case kodama-theme)</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #B392F0;">cp</span><span style="color: #79B8FF;"> -v</span><span style="color: #9ECBFF;"> themes/kodama-theme/templates/blog-page.html templates/</span></span></code></pre>
+<p>and add this code</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="html"><span class="giallo-l"><span>{% if page.taxonomies.categories or page.taxonomies.tags %}</span></span>
+<span class="giallo-l"><span>  &lt;</span><span style="color: #85E89D;">div</span><span style="color: #B392F0;"> class</span><span>=</span><span style="color: #9ECBFF;">&quot;post-taxonomies&quot;</span><span style="color: #B392F0;"> style</span><span>=</span><span style="color: #9ECBFF;">&quot;margin-bottom: 1rem&quot;</span><span>&gt;</span></span>
+<span class="giallo-l"><span>    </span></span>
+<span class="giallo-l"><span>    {% if page.taxonomies.categories %}</span></span>
+<span class="giallo-l"><span>      &lt;</span><span style="color: #85E89D;">span</span><span style="color: #B392F0;"> class</span><span>=</span><span style="color: #9ECBFF;">&quot;categories&quot;</span><span>&gt;</span></span>
+<span class="giallo-l"><span>        &lt;</span><span style="color: #85E89D;">strong</span><span>&gt;Categories:&lt;/</span><span style="color: #85E89D;">strong</span><span>&gt;</span></span>
+<span class="giallo-l"><span>        {% for cat in page.taxonomies.categories %}</span></span>
+<span class="giallo-l"><span>          &lt;</span><span style="color: #85E89D;">a</span><span style="color: #B392F0;"> href</span><span>=</span><span style="color: #9ECBFF;">&quot;{{ get_taxonomy_url(kind=&quot;</span><span style="color: #B392F0;">categories</span><span style="color: #FDAEB7;font-style: italic;">&quot;,</span><span style="color: #B392F0;"> name</span><span>=</span><span style="color: #9ECBFF;">cat)</span><span style="color: #B392F0;"> }}</span><span style="color: #FDAEB7;font-style: italic;">&quot;</span><span>&gt;{{ cat }}&lt;/</span><span style="color: #85E89D;">a</span><span>&gt;{% if not loop.last %}, {% endif %}</span></span>
+<span class="giallo-l"><span>        {% endfor %}</span></span>
+<span class="giallo-l"><span>      &lt;/</span><span style="color: #85E89D;">span</span><span>&gt;</span></span>
+<span class="giallo-l"><span>    {% endif %}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    {% if page.taxonomies.tags %}</span></span>
+<span class="giallo-l"><span>      &lt;</span><span style="color: #85E89D;">span</span><span style="color: #B392F0;"> class</span><span>=</span><span style="color: #9ECBFF;">&quot;tags&quot;</span><span>&gt;</span></span>
+<span class="giallo-l"><span>        &lt;</span><span style="color: #85E89D;">strong</span><span>&gt;Tags:&lt;/</span><span style="color: #85E89D;">strong</span><span>&gt;</span></span>
+<span class="giallo-l"><span>        {% for tag in page.taxonomies.tags %}</span></span>
+<span class="giallo-l"><span>          &lt;</span><span style="color: #85E89D;">a</span><span style="color: #B392F0;"> href</span><span>=</span><span style="color: #9ECBFF;">&quot;{{ get_taxonomy_url(kind=&quot;</span><span style="color: #B392F0;">tags</span><span style="color: #FDAEB7;font-style: italic;">&quot;,</span><span style="color: #B392F0;"> name</span><span>=</span><span style="color: #9ECBFF;">tag)</span><span style="color: #B392F0;"> }}</span><span style="color: #FDAEB7;font-style: italic;">&quot;</span><span>&gt;{{ tag }}&lt;/</span><span style="color: #85E89D;">a</span><span>&gt;{% if not loop.last %}, {% endif %}</span></span>
+<span class="giallo-l"><span>        {% endfor %}</span></span>
+<span class="giallo-l"><span>      &lt;/</span><span style="color: #85E89D;">span</span><span>&gt;</span></span>
+<span class="giallo-l"><span>    {% endif %}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>  &lt;/</span><span style="color: #85E89D;">div</span><span>&gt;</span></span>
+<span class="giallo-l"><span>{% endif %}</span></span></code></pre>
+<p>right after the <code>&lt;article&gt;</code> opening tag and before</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="html"><span class="giallo-l"><span>    {{ macros::toc() }}</span></span>
+<span class="giallo-l"><span>    {{ page.content | safe }}</span></span>
+<span class="giallo-l"><span>    {% if page.extra.external_link %}&lt;</span><span style="color: #85E89D;">p</span><span>&gt;&lt;</span><span style="color: #85E89D;">a</span><span style="color: #B392F0;"> href</span><span>=</span><span style="color: #9ECBFF;">&quot;{{page.extra.external_link | safe}}&quot;</span><span style="color: #B392F0;"> target</span><span>=</span><span style="color: #9ECBFF;">&quot;_blank&quot;</span><span>&gt;{{page.extra.external_link | safe}}&lt;/</span><span style="color: #85E89D;">a</span><span>&gt;&lt;/</span><span style="color: #85E89D;">p</span><span>&gt;{% endif -%}</span></span>
+<span class="giallo-l"><span>  &lt;/</span><span style="color: #85E89D;">article</span><span>&gt;</span></span></code></pre>
+<p>Keep in mind that the location where you add the code might vary. Enjoy :)</p>
+
+    </article>
+</div>
+<!-- <div class="sticky bottom-0 px-3">
+    <a href="#page-top">Back to top of page</a>
+  </div> -->
+  <footer class="bg-white">
+    <div class="bg-white text-gray-400 container max-w-4xl mx-auto my-8 px-4">
+    © Michele Bucca. Template <a class="underline" target="_blank" href="https://github.com/adfaure/kodama-theme">Kodama</a> made with <a class="underline" target="_blank" href="https://getzola.org">zola</a>, inspired by <a class="underline" target="_blank" href="https://wowchemy.com/"> wowchemy</a> academic theme.
+    </div>
+  </footer>
+  </body>
+
+</html>

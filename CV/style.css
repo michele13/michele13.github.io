@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Centra il contenuto della pagina */
+.container {
+    display: grid;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.60;
+}
+
+p {
+    margin-right: 10%;
+}
+
+img.profile {
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+
+h2 {
+    background-color: skyblue;
+}
+
+
+h2.subtitle { 
+    background-color: white;
+}
+
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.cv-element {
+    width: 20%;
+}
+
+/*
+#about > p {
+    line-height: 1.2em; 
+}
+
+*/
+
+ul.anagraphics {
+    display: block;
+}
+
+
+#about > h1,
+#about > h2 {
+    text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+    .cv-element {
+        width: 33%;
+        margin: 0 5%;
+    }
+}
+
+@media print {
+    
+    .container {
+        grid-template-columns: 33% 66%;
+        grid-template-rows: auto auto auto auto;
+        gap: 10px;
+        margin: 0;
+        line-height: normal;
+    }
+    
+    img.profile {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+    }
+    
+    /* Dividi la pagina in due colonne: 
+    la prima cella prende tutte e le righe */
+    #about {
+        grid-row-start: 1;
+        /* ci sono 5 sezioni che altrimenti finirebbero a capo */
+        grid-row-end: 5; 
+        
+    }
+
+    .flex {
+        display: grid;
+        /* Ordina le certificazioni a 3 a 3 */
+        grid-template-columns: auto auto auto;
+        gap: 10px 6px;
+    }
+
+    .cv-element {
+        width: auto;
+    }
+
+    p { margin: auto;}
+
+    ul.anagraphics  {
+        padding-left: 10px;
+    }
+
+    #driver-lang {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        
+    }
+
+    #driver-lang h3 {
+        display: flex;
+    }
+
+    #certs, #education {
+        gap: 10px 500px;
+    }
+}

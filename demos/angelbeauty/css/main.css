@@ -1,0 +1,646 @@
+@font-face {
+    font-family: 'herr_von_muellerhoffregular';
+    src: url('../fonts/herrvonmuellerhoff-regular-webfont.woff2') format('woff2'),
+         url('../fonts/herrvonmuellerhoff-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html, body {
+	font-family: Calibri;
+	font-size: 16px;
+	margin: 0px;
+	padding: 0px;
+}
+
+div {
+ /* border: 1px solid black;  */
+
+}
+
+.logo {
+	position: absolute;
+	top: 0px;
+	left: 7%;
+	width: 180px;
+	height: 95px;
+	padding: 40px 50px;
+	background-color: white;
+	z-index: 1;
+	box-shadow: 0px 0px 2px 0px;
+}
+
+.logo img {
+	width: 100%;
+	height: 100%;
+}
+
+.contatti {
+	position: relative;
+	background-color: #EC5598;
+	color: white;
+	width: 100%;
+	height: 41px;
+	text-align: right;
+	line-height: 41px;
+}
+
+
+.contatti a {
+	text-decoration: none;
+	color: white;
+	font-weight: normal;
+	margin: 3px;
+}
+
+
+.menu {
+	position: relative;
+	width: 100%;
+	height: 117px;
+	background-color: white;
+	box-shadow: 0px 0px 2px 0px;
+}
+
+.contenitore {
+	position: relative;
+	margin: 0% 10%; 
+	float: right;
+}
+
+.pulsante {
+	position: relative;
+	display: inline-block;
+	height: 100%;
+}
+
+.pulsante a {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	line-height: 117px;
+	padding: 0px 30px;
+	display: block;
+}
+
+.pulsante a:hover {
+	color: #EC5598;
+}
+
+.carrello {
+	display: inline-block;
+	position: relative;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #E9E9E9;
+	
+}
+
+.carrello a {
+	display: block;
+	width: 40px;
+	height: 40px;
+	color: black;
+	text-decoration: none;
+}
+
+.carrello a:hover {
+	color: #EC5598;
+}
+
+.sub-menu {
+	display: none;
+	position: absolute;
+	width: 200%;
+	border-top: 3px solid #EC5598;
+	z-index: 1;
+	background-color: white;
+}
+.sub-menu a {
+	display: block;
+	line-height: 3;
+	width: 100%;
+	font-weight: normal;
+	font-style: italic;
+}
+
+.pulsante:hover .sub-menu {
+	display: block;
+}
+
+.sub-menu2 {
+	display: none;
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	left: 100%;
+	top:0px;
+	background-color: white;
+}
+
+
+
+.sublink {
+	width: 100%;
+}
+
+.SubMenuLink {
+	position: relative;
+	width: 100%;
+	z-index: 2;
+	background-color: white;
+}
+
+.SubMenuLink:hover .sub-menu2 {
+	display: block;
+}
+
+
+/* Inizio Vetrina */
+.vetrina {
+	position: relative;
+	top: 0px;
+	width: 100%;
+	height: 500px;
+	background-image: url('../img/vetrinabig.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+	border-bottom: 4px solid #EC5598;
+}
+
+.vetrina img {
+	width: 100%;
+}
+
+.testo-vetrina {
+	display: block;
+	position: relative;
+	top: 25%;
+	left: 10%;
+	width: 50%;
+	height: 100%;
+	
+}
+
+.testo-vetrina h1 {
+	font-size: 55px;
+	margin: 0px;
+}
+
+.testo-vetrina h2 {
+	font-weight: normal;
+	text-align: left;
+}
+
+.action {
+	display: inline-block;
+	background-color: #EC5598;
+	padding: 17px 40px;
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	margin-top: 4px;
+	font-size: 19px;
+}
+
+
+/* Pagina Uno */
+
+.PaginaUno {
+	position: relative;
+	width: 100%;
+	height: 580px;
+	background-color: #EDEDED;
+}
+
+.cornice {
+	position: relative;
+	top: 15%;
+	left: 7%;
+	width: 540px;
+	height: 400px;
+	border: 5px solid white;
+	z-index: 1
+}
+
+.cornice img {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	top: -24px;
+	left: 23px;
+	z-index: 3
+}
+
+.testoP1 {
+	position: absolute;
+	width: 30%;
+	height: 90%;
+	top: 0;
+	left:40%;
+	background-color: white;
+	padding: 0% 12%;
+	line-height: 1.5;
+	letter-spacing: normal;
+}
+
+.testoP1 .titolo {
+	padding-top: 15%;
+	letter-spacing: 6px;
+}
+
+/* Pagina Due */
+
+.PaginaDue {
+	position: relative;
+	width: 100%;
+	height: 980px;
+	background-color: white;
+}
+
+.contenuto-pagina {
+	position: relative;
+	margin: 0px 7%;
+	width: 100%;
+	min-height: 700px;
+}
+
+/* Titolo e Sottotitolo */
+
+.PaginaDue h2 {
+	text-align: center;
+	letter-spacing: 10px;
+	line-height: 1;
+	margin-top: 48px;
+}
+
+.titoloPagina {
+	font-family: 'herr_von_muellerhoffregular';
+	font-size: 90px;
+	color: #EC5598;
+	display: block;
+	font-weight: normal;
+	letter-spacing: normal;
+}
+
+/* DIV con lista trattamenti */
+
+.lista-prezzi {
+	display: inline-block;
+	position: relative;
+	width: 25%;
+	min-height: 580px;
+	box-shadow: 0px 0px 1px 0px;
+	left: 7%;
+}
+
+
+.lista-prezzi-content {
+	display: inline-block;
+	position: relative;
+	margin: 0px 5%;
+	width: 90%;
+	min-height: 490px;
+}
+
+/* Lista Trattamenti */
+
+.container-lista {
+	width: 98%;
+	margin: 0px 0%;
+	list-style: none;
+	padding: 0px;
+	}
+
+.container-lista a{
+	text-decoration: none;
+	color: black;
+}
+
+
+.list-element {
+	border-bottom: 1px dashed;
+	padding: 7% 0px;
+	font-weight: bold;
+}
+
+
+
+.active, .list-element:hover {
+	color: #EC5598; /* Pink Text */
+}
+
+.list-element a {
+	text-decoration: none;
+	color: black;
+}
+
+
+/* Pulsante Appuntamento */
+
+.lista-prezzi-content .action {
+	display: inline-block;
+	position: relative;
+	margin: 0;
+	text-align: center;
+	top: 10px;
+	font-size: 16px;
+	padding: 6px;
+	left: 17%;
+}
+
+/* Riquadro descrizione trattamenti */
+
+.spoiler {
+	border: 1px solid black;
+
+	display: inline-block;
+	position: absolute;
+	
+	top: 13.5%;
+	width: 57%;
+	height: 750px;
+	left: 33%
+}
+
+.spoiler img {
+	height: 400px;
+	width: 100%;
+}
+
+.spoiler h3 {
+	font-weight: normal;
+	margin-left:1%;
+	font-size: 26px;
+}
+
+.spoiler p {
+	letter-spacing: 2px;
+	word-spacing: 5px;
+	margin-left:1%;
+}
+
+.important {
+	font-weight: bold;
+	color: #EC5598; /* Pink */
+}
+
+.PaginaTre {
+	position: relative;
+	width: 100%;
+	height: 350px;
+	background-image: url('../img/pattern-1-1.jpg');
+}
+
+.contenuto-pagina3 {
+	position: relative;
+	margin-left: 7%;
+	width: 100%;
+	height: 300px;
+}
+
+.cerchio {
+	display: inline-block;
+	position: relative;
+	width: 250px;
+	height: 250px;
+	padding: 0% 1%;
+	border: 6px solid white;
+	border-radius: 50%;
+	top: 15%;
+	overflow: hidden;
+}
+
+.cerchio-piccolo {
+	display: block;
+	position: relative;
+	width: 60px;
+	height:60px;
+	background-color: white;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 60px;
+	font-weight: bold;
+	color: #EC5598; /* Pink */
+	font-size: 20px;
+	left: 72%;
+}
+
+.porzione {
+	width: 19%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: 0;
+}
+
+.DivUno {
+	left: 7%;
+}
+
+.DivDue {
+	left: 29%;
+}
+
+.DivTre {
+	left: 50%;
+}
+
+.DivQuattro {
+	left: 71%;
+}
+
+
+
+.titoloTrattamento {
+	background-color: #EC5598; /* Pink */
+	opacity: 77%;
+	display: block;
+	position: absolute;
+	top: 62%;
+	height: 40%;
+	width: 100%;
+	text-align: center;
+	line-height: 3;
+	color: white;
+	font-size: 25px;
+}
+
+/* Pagina Quattro */
+
+.PaginaQuattro {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 750px;
+	background-color: white;
+	
+}
+
+/* Intestazione PaginaQuattro */
+.PaginaQuattro h2 {
+	text-align: center;
+	letter-spacing: 10px;
+	line-height: 1;
+	margin-top: 48px;
+}
+
+
+/* Prodotti */
+
+/* Elementi in Comune */
+.Prodotto {
+	display: block;
+	position: absolute;
+	border: 1px solid #EDEDED;
+	width: 27%;
+	height: 70%;
+	top: 25%;
+	
+}
+
+.imgProdotto {
+	display: block;
+	position: absolute;
+	height: 80%;
+	width: 100%;
+	
+}
+
+.imgProdotto img {
+	width: 100%;
+	height: 100%;
+	transition: 0.8s ease-in-out;
+}
+
+.imgProdotto:hover img{
+	transform: scale(1.2);
+}
+
+.imgCover {
+	display: none;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: #EC5598; /* Pink */
+	opacity: 70%;
+	top: 0px;
+	transition: 0.8s ease-in-out;
+}
+
+.imgProdotto:hover .imgCover {
+	display: block;
+}
+
+/* Prodotto di Sinistra */
+.PrSinistra {
+	left: 7%;
+}
+
+.PrCentro {
+	left: 36%;
+}
+
+.PrDestra {
+	left: 65%;
+}
+
+.testoProdotto {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 30%;
+	text-align: center;
+	line-height: 2;
+	font-size: 20px;
+/*
+	transition: 5s linear;
+*/
+}
+
+
+.testoProdotto strong {
+	font-weight: normal;
+}
+
+.testoProdotto del {
+	color: #e4e4e4;
+}
+
+.testoProdotto ins {
+	text-decoration: none;
+	font-weight: bold;
+	color: #EC5598; /* Pink */
+}
+
+.testoProdotto a {
+	text-decoration: none;
+	color: black;
+}
+
+
+/* Pagina Cinque */
+
+.PaginaCinque {
+	display: block;
+	position: relative;
+	width: 100%;
+	min-height: 600px;
+	background-image: url('../img/pattern-1-1.jpg');
+}
+
+
+.PaginaCinque h2 {
+	text-align: center;
+	letter-spacing: 10px;
+	line-height: 1;
+	padding: 5% 0px;
+	margin: 0px;
+}
+
+.testimonial {
+	display: inline-block;
+	position: relative;
+	top: 35%;
+	width: 42%;
+	height: 65%;
+	border: 1px solid black;
+}
+
+#uno.testimonial {
+	left: 7%;
+}
+
+#due.testimonial {
+	left: 9%;
+}
+
+.opinione {
+	display: inline-block;
+	position: relative;
+	width: 55%;
+	height: 100%;
+	left: 40%;
+	background-color: white;
+	color: black;
+	padding: 1px 15px;
+}
+
+.rosa {
+	color: #EC5598; /* Pink */
+}
+
+.opinione i {
+	font-size: 25px;
+}
+
+
+
+
+ 

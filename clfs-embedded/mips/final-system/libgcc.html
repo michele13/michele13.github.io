@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      5.4.&nbsp;libgcc-13.2.0
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="clfs" id="clfs-GIT-20240401-mips">
+    <div class="navheader">
+      <h4>
+        Cross-Compiled Linux From Scratch - Embedded - Version
+        GIT-20240401-mips
+      </h4>
+      <h3>
+        Chapter&nbsp;5.&nbsp;Installing Basic System Software
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="creatingfiles.html" title=
+          "Creating the passwd, group, and lastlog Files">Prev</a>
+          <p>
+            Creating the passwd, group, and lastlog Files
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="libc.html" title="musl-1.2.5">Next</a>
+          <p>
+            musl-1.2.5
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;5.&nbsp;Installing Basic System Software">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-mips">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+    <div class="wrap" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-final-system-libgcc" name="ch-final-system-libgcc"></a>5.4.
+        libgcc-13.2.0
+      </h1>
+      <div class="package" lang="en" xml:lang="en">
+        <p>
+          When compiling dynamically linked software using GCC, GCC requires
+          that libgcc be able to be loaded during runtime when executing the
+          software. Hence, we must be sure to provide the final system with a
+          copy of the libgcc we previously built for our cross tools.
+        </p>
+      </div>
+      <div class="installation" lang="en" xml:lang="en">
+        <h2 class="sect2">
+          5.4.1. Installation of libgcc
+        </h2>
+        <p>
+          Install the package:
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">cp -v ${CLFS}/cross-tools/${CLFS_TARGET}/lib/libgcc_s.so.1 ${CLFS}/targetfs/lib/</kbd></pre>
+        <p>
+          Strip libgcc to make it smaller:
+        </p>
+        <pre class="userinput"><kbd class=
+        "command">${CLFS_TARGET}-strip ${CLFS}/targetfs/lib/libgcc_s.so.1</kbd></pre>
+      </div>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="creatingfiles.html" title=
+          "Creating the passwd, group, and lastlog Files">Prev</a>
+          <p>
+            Creating the passwd, group, and lastlog Files
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="libc.html" title="musl-1.2.5">Next</a>
+          <p>
+            musl-1.2.5
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;5.&nbsp;Installing Basic System Software">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-mips">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
