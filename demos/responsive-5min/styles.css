@@ -1,0 +1,56 @@
+* {box-sizing: border-box;}
+
+body {margin: 0;}
+
+header {
+    text-align: center;
+    height: 70px;
+    background-color: lightgrey;
+    padding: 20px;
+    font-size: x-large;
+
+}
+
+h1 {
+   color: blue;
+   text-align: center;
+   font-size: 2rem;
+}
+
+.myImg {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+}
+
+nav {
+    overflow: auto;
+    font-size: 1rem;
+    background-color: #565656;
+}
+
+nav a {
+    display: block;
+    float: left;
+    color: white;
+    text-decoration: none;
+    padding: 15px 15px;
+}
+
+nav a:hover {
+  background-color: black;
+}
+
+@media (max-width: 768px) {
+   html { font-size: 14px; }
+   nav {
+       font-size: 14px;
+   }
+   h1 {
+       font-size: 28px;
+   }
+  .myImg {
+    width: 100%;
+  }
+
+}

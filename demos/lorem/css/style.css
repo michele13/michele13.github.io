@@ -1,0 +1,122 @@
+.html, body {
+  margin: 0px;
+  font-size: 16px;
+  font-family: Calibri;
+  background-color: #F2F2F2;
+  }
+  
+
+.testata {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  height: 120px;
+}
+
+.logo {
+  position: relative;
+  
+  /* Per centrare l'immagine al centro della testata usiamo
+   *  il margin 0 auto. Tuttavia per poter funzionare l'img deve essere
+   *  in "display: block" */
+    
+  margin: 0 auto;
+  display: block;
+  
+  height: 100px;
+  padding: 10px; 0px;
+}
+
+.barra {
+   position: relative;
+   width: 100%;
+   height: 60px;
+   background-color: #424242;
+}
+
+.menu {
+	margin: 0 20%;
+}
+
+.pulsante {
+	position: relative;
+	background-color: #808080;
+	display: inline-block;
+	line-height: 60px;
+	padding: 0 2%;
+	}
+
+.pulsante a {
+	color: white;
+	text-decoration: none;
+}
+
+.corpo {
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+	min-height: 720px;
+	background-color: #F2F2F2;
+}
+
+.vetrina {
+	position: relative;
+	margin: 0 auto;
+}
+
+.vetrina img {
+	width: 100%;
+	height: 100%;
+}
+
+.container {
+	position: relative;
+	background-color: #E9E9E9;
+	width: 100%;
+}
+.box {
+	position: relative;
+	display: inline-block;
+	width: 46%;
+	height: auto;
+	padding: 1.8%;
+	margin: 0 auto 1%;
+}
+
+.box img {
+	width: 100%;
+}
+
+.primo {
+	position: relative;
+	display: inline-block;
+	width: 50%;
+	height: 400px;
+}
+
+.primo .testo {
+	position: relative;
+	margin: 20% 2% 0% 2%;
+}
+
+.secondo {
+	position: absolute;
+	display: inline-block;
+	left: 50%;
+	width: 50%;
+	height: 400px;
+}
+
+.secondo .testo {
+	position: absolute;
+	color: white;
+	text-align: center;
+	line-height: 400px;
+	width: 100%;
+	height: 100%
+}
+
+.secondo img {
+	height: 100%;
+	width: 100%;
+}

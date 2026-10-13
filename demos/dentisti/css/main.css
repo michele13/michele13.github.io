@@ -1,0 +1,286 @@
+body {
+	margin: 0;
+	padding: 0;
+	color: #666;
+	font-size: 16px;
+}
+
+a {
+	color: #d8b45d;
+	text-decoration: none;
+}
+
+h3 { font-size: 16px; 
+	font-weight: normal; 
+}
+
+/* NAVBAR */
+
+.navbar {
+	position: fixed;
+	width: 100%;
+	height: 90px;
+	background-color: white;
+	box-shadow: 1px 0px 1.5px grey;
+	z-index: 1;
+}
+
+.logo {
+	position: absolute;
+	width: 10%;
+	height: 68%;
+	top: 15%;
+	left: 8%;
+}
+
+.logo img {
+	width: 100%;
+	height: 100%;
+}
+
+.menu {
+	display: inline-block;
+	position: relative;
+	height: 100%;
+	left: 32%;
+	text-align: center;
+	width: 65%;
+	line-height: 5;
+	background-color: white;
+}
+
+.menu-link {
+	text-decoration: none;
+	color: black;
+	padding: 2%;
+	transition: .4s ease-in-out ;
+
+}
+
+a.menu-link.current {
+	color: #d8b45d;
+	transition: .4s ease-in-out ;
+
+}
+
+a.menu-link.current:hover {
+	opacity: .7;
+	color: #d8b45d; /* Oro */
+}
+
+
+
+a.menu-link:hover {
+	color: #aaaaaa;
+}
+
+.sezione {
+	display: block;
+	position: relative;
+	background-color: white;
+	width: 100%;
+	z-index: 0;
+}
+
+/* VETRINA */
+
+#vetrina {
+	background-image: url("../img/vetrina.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 600px;
+	z-index: -1;
+	text-align: center;
+	position: fixed;
+}
+
+#TestoVetrina {
+	height: 600px;
+	z-index: 0;
+	text-align: center;
+	position: relative;
+	background-color: initial;
+}
+
+.center {
+	position: absolute;
+	width: 100%;
+	text-align: center;	
+}
+
+.t1 {
+	top: 40%;
+}
+
+.center h1 {
+	color: black;
+	font-size: 40px;
+	font-weight: normal;
+}
+
+.button {
+	background-color: #d8b45d;
+	color: white;
+	padding: 20px;
+	text-decoration: none;
+	display: inline-block;
+	margin: 4px 2px;
+}
+
+/* VANTAGGI */
+
+#vantaggi {
+	height: 400px;
+	text-align:center;
+}
+
+.riquadro {
+	display: inline-block;
+	position: relative;
+	height: 90%;
+	width: 21%;
+	top:0;
+}
+
+
+.riquadroTesto {
+	top: 10%
+}
+
+/* ORGANIZZAZIONE AMBIENTI*/
+
+#organizzazione {
+	height: 400px;
+}
+
+#organizzazione h2, #organizzazione h3 {
+	text-align: center;
+	margin: 0;
+}
+
+#organizzazione h2 {
+	font-size: 24px;
+	color: black;
+	
+}
+
+#organizzazione h3 {
+	font-size: 26px;
+	font-weight: normal;
+}
+
+.corpo {
+	margin-left: auto;
+	margin-right: auto;
+	width: 84%;
+	line-height: 1.7
+}
+
+/* Protezione Da Agenti Infettivi */
+
+#protezione {
+	height: 500px;
+}
+
+video {
+	width: 60%;
+	height: auto;
+}
+
+.boxTesto {
+	position: absolute;
+	display: inline-block;
+	width: 32%;
+	margin: 0% 2%;
+}
+
+.boxTesto h3 {
+	margin: 0;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.boxTesto ul {
+	padding-left: 20px;
+	margin: 0;
+}
+
+/* Harem */
+
+#harem {
+	height: 600px;
+}
+
+#harem img {
+	width: 100%;
+	height: auto;
+}
+
+/* Team */
+
+#team {
+	height: 800px;
+	text-align: justify;
+}
+
+#team h2 {
+	margin: 0;
+	text-align: center;
+}
+
+.membri {
+	position: relative;
+	width: 100%;
+	height: 400px;
+}
+
+.persona {
+	display: inline-block;
+	position: relative;
+	height: 100%;
+	width: 25%;
+	text-align: left;
+}
+
+#fabrizio {
+	left: 0;
+	margin-right: 8%;
+}
+
+#fabrizio img {
+	width: 100%;
+}
+
+#roberto {
+	margin: 0 4.5%; 
+}
+
+#roberto img {
+	width: 100%;
+}
+
+#paola {
+	/* Uso questo valore perchè questo DIV va a capo se metto 8 --> display-inline aggiunge 0,71% di spazio 
+	tra un riquadro e un altro */
+	margin-left: 6.58%;
+}
+
+#paola img {
+	width: 100%;
+}
+
+#fabrizio span, #roberto span, #paola span {
+	color: black;
+}
+#fabrizio a, #roberto a, #paola a {
+	font-weight: bold;
+}
+
+.action {
+	color: black;
+	text-align: center;
+}
+
+#staff {
+	padding: 10px 20px;
+}

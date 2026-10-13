@@ -1,0 +1,12 @@
+Colore barra rosa: #ec5598
+&#8897; ==> N-ARY LOGICAL OR - freccia che punta in basso
+&#9742; ==> Telefono bianco
+ ==> Lettera
+&#9776; ==> Simbolo Menu cellulare
+&#128241; ==> Emoji Telefonino
+&#128233; ==> Emoji Lettera  
+
+
+https://www.html.it/articoli/usare-il-line-height-sui-menu/
+
+https://www.sergiopinna.it/effetto-zoom-sulle-immagini-e-non-solo/

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Michele Bucca - zola</title>
+    <link rel="self" type="application/atom+xml" href="https://michele13.github.io/tags/zola/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://michele13.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-07-30T00:00:00+00:00</updated>
+    <id>https://michele13.github.io/tags/zola/atom.xml</id>
+    <entry xml:lang="en">
+        <title>I&#x27;ve added tags and categories to the website</title>
+        <published>2026-07-30T00:00:00+00:00</published>
+        <updated>2026-07-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://michele13.github.io/blog/added-categories-tags-blog/"/>
+        <id>https://michele13.github.io/blog/added-categories-tags-blog/</id>
+        
+        <content type="html" xml:base="https://michele13.github.io/blog/added-categories-tags-blog/">&lt;p&gt;Yesterday I thought about adding categories and tags to my blog so that I can write small technical blog posts on this website and sort them by topic.&lt;&#x2F;p&gt;
+&lt;p&gt;To make things more organized every post will have many tags but &lt;em&gt;only one&lt;&#x2F;em&gt; category.&lt;&#x2F;p&gt;
+&lt;p&gt;To achieve this we will use the feature called &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;documentation&#x2F;content&#x2F;taxonomies&#x2F;&quot;&gt;taxonomy&lt;&#x2F;a&gt;. Let&#x27;s begin the setup.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;step-1-edit-config-toml&quot;&gt;Step 1 - Edit &lt;code&gt;config.toml&lt;&#x2F;code&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#step-1-edit-config-toml&quot; aria-label=&quot;Anchor link for: step-1-edit-config-toml&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Edit &lt;code&gt;config.toml&lt;&#x2F;code&gt; with a text editor and add the following text before the first &lt;code&gt;[section]&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;taxonomies = [&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt; { name =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;categories&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, feed =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; true&lt;&#x2F;span&gt;&lt;span&gt; },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt; { name =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;tags&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, feed =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; true&lt;&#x2F;span&gt;&lt;span&gt; }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If you already have other taxonomies, just add the lines that contain the curly brackets, but don&#x27;t forget to add the comma to the second line!&lt;&#x2F;p&gt;
+&lt;p&gt;Now, add the links for &lt;strong&gt;Tags&lt;&#x2F;strong&gt; and &lt;strong&gt;Categories&lt;&#x2F;strong&gt; to the &lt;code&gt;menu_items&lt;&#x2F;code&gt; section&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FDAEB7;font-style: italic;&quot;&gt;&#x2F;&#x2F; ...&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt;extra&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;menu_items = [&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FDAEB7;font-style: italic;&quot;&gt;&#x2F;&#x2F; ...&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{ path =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;.&#x2F;tags&#x2F;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, name =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;Tags&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt; },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{ path =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;.&#x2F;categories&#x2F;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, name =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;Categories&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt; },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FDAEB7;font-style: italic;&quot;&gt;&#x2F;&#x2F; ...&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;step-2-add-tags-and-categories-to-an-article&quot;&gt;Step 2 - Add tags and categories to an article&lt;a class=&quot;zola-anchor&quot; href=&quot;#step-2-add-tags-and-categories-to-an-article&quot; aria-label=&quot;Anchor link for: step-2-add-tags-and-categories-to-an-article&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Open an article or blog post and add the &lt;strong&gt;categories&lt;&#x2F;strong&gt; and &lt;strong&gt;tags&lt;&#x2F;strong&gt; in the &lt;strong&gt;taxonomies section&lt;&#x2F;strong&gt; at the end of the front matter:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt;taxonomies&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;categories = [&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;zola&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;tags = [&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;zola&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Now it looks like this:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FDAEB7;font-style: italic;&quot;&gt;+++&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;title =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;I&amp;#39;ve added tags and categories to the website&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;date =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; 2026-07-30&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;description =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;quot;&amp;quot;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;I&amp;#39;ve added tags and categories to the website thanks to taxonomies&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt;taxonomies&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;categories = [&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;zola&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;tags = [&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;zola&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FDAEB7;font-style: italic;&quot;&gt;+++&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;step-3-edit-the-theme-so-that-it-shows-tags-and-categories-on-every-blog-page&quot;&gt;Step 3 - Edit the theme so that it shows tags and categories on every blog page&lt;a class=&quot;zola-anchor&quot; href=&quot;#step-3-edit-the-theme-so-that-it-shows-tags-and-categories-on-every-blog-page&quot; aria-label=&quot;Anchor link for: step-3-edit-the-theme-so-that-it-shows-tags-and-categories-on-every-blog-page&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Copy the template called &lt;code&gt;blog-page.html&lt;&#x2F;code&gt; from your theme (in my case kodama-theme)&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt;cp&lt;&#x2F;span&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt; -v&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; themes&#x2F;kodama-theme&#x2F;templates&#x2F;blog-page.html templates&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;and add this code&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;html&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{% if page.taxonomies.categories or page.taxonomies.tags %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;div&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; class&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;post-taxonomies&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; style&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;margin-bottom: 1rem&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    {% if page.taxonomies.categories %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;span&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; class&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;categories&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;strong&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;Categories:&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;strong&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        {% for cat in page.taxonomies.categories %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;          &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;a&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; href&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;{{ get_taxonomy_url(kind=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt;categories&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FDAEB7;font-style: italic;&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; name&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;cat)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; }}&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FDAEB7;font-style: italic;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;{{ cat }}&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;a&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;{% if not loop.last %}, {% endif %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        {% endfor %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;span&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    {% endif %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    {% if page.taxonomies.tags %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;span&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; class&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;tags&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;strong&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;Tags:&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;strong&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        {% for tag in page.taxonomies.tags %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;          &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;a&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; href&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;{{ get_taxonomy_url(kind=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt;tags&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FDAEB7;font-style: italic;&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; name&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;tag)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; }}&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FDAEB7;font-style: italic;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;{{ tag }}&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;a&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;{% if not loop.last %}, {% endif %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        {% endfor %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;span&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    {% endif %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;div&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{% endif %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;right after the &lt;code&gt;&amp;lt;article&amp;gt;&lt;&#x2F;code&gt; opening tag and before&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;html&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    {{ macros::toc() }}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    {{ page.content | safe }}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    {% if page.extra.external_link %}&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;a&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; href&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;{{page.extra.external_link | safe}}&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B392F0;&quot;&gt; target&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt;&amp;quot;_blank&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;{{page.extra.external_link | safe}}&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;a&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;{% endif -%}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;article&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Keep in mind that the location where you add the code might vary. Enjoy :)&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>I&#x27;ve finally deployed my website on Github pages</title>
+        <published>2026-01-11T00:00:00+00:00</published>
+        <updated>2026-01-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://michele13.github.io/blog/website-deploy-gh-pages/"/>
+        <id>https://michele13.github.io/blog/website-deploy-gh-pages/</id>
+        
+        <content type="html" xml:base="https://michele13.github.io/blog/website-deploy-gh-pages/">&lt;p&gt;Recently, as you read on my &lt;a href=&quot;&#x2F;blog&#x2F;hello-world&quot;&gt;previous post&lt;&#x2F;a&gt;, I&#x27;ve built my new website using Zola.
+Yesterday I&#x27;ve tried to deploy it to github pages using the instructions on the &lt;a href=&quot;https:&#x2F;&#x2F;web.archive.org&#x2F;web&#x2F;20251116072637&#x2F;https:&#x2F;&#x2F;www.getzola.org&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;&quot; target=&quot;_blank&quot;&gt;official page (archived)&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;&#x2F;strong&gt;
+The webpage has been updated!
+&lt;a target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;&quot;&gt;See official page&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;I&#x27;ve used the instructions of this &lt;a target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;shalzz&#x2F;zola-deploy-action&quot;&gt;Github action&lt;&#x2F;a&gt; but unfortunately it did not work well and my website bloke, displaying a 404 error:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;404.jpg&quot; alt=&quot;404&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;This was my original &lt;code&gt;.github&#x2F;worklows&#x2F;main.yml&lt;&#x2F;code&gt; file:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;on&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; push&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;jobs&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;  build_and_deploy&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;    runs-on&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; ubuntu-latest&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;    if&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; github.ref == &amp;#39;refs&#x2F;heads&#x2F;main&amp;#39;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;    steps&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      -&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt; name&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;#39;checkout&amp;#39;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;        uses&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; actions&#x2F;checkout@v4&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      -&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt; name&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;#39;build and deploy&amp;#39;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;        uses&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; shalzz&#x2F;zola-deploy-action@master&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;        env&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #6A737D;&quot;&gt;          # Target Branch&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;          PAGES_BRANCH&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; gh-pages&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;          TOKEN&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; ${{ secrets.GITHUB_TOKEN }}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;But it needed to be updated with the following lines&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;permissions&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;  contents&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; write&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;and limit the execution of the action only when I uploaded code to the main branch.
+The new version is much more clean:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #E1E4E8; background-color: #24292E;&quot;&gt;&lt;code data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #79B8FF;&quot;&gt;on&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;  push&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;    branches&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    -&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; main&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;permissions&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;  contents&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; write&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;jobs&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;  build_and_deploy&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;    runs-on&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; ubuntu-latest&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;    steps&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      -&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt; name&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;#39;checkout&amp;#39;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;        uses&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; actions&#x2F;checkout@v4&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      -&lt;&#x2F;span&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt; name&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; &amp;#39;build and deploy&amp;#39;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;        uses&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; shalzz&#x2F;zola-deploy-action@master&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;        env&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #6A737D;&quot;&gt;          # Target Branch&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;          PAGES_BRANCH&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; gh-pages&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #85E89D;&quot;&gt;          TOKEN&lt;&#x2F;span&gt;&lt;span&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #9ECBFF;&quot;&gt; ${{ secrets.GITHUB_TOKEN }}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;I also made sure to give Github actions the permissions to write to write to the repo:&lt;&#x2F;p&gt;
+&lt;p&gt;inside the repo go in &lt;strong&gt;Settings -&amp;gt; Actions -&amp;gt; General&lt;&#x2F;strong&gt;, I checked &lt;strong&gt;allow michele13 actions and reusable workflows&lt;&#x2F;strong&gt; (michele13 is my username) and  enabled &lt;strong&gt;read&#x2F;write&lt;&#x2F;strong&gt; permissions on &lt;strong&gt;Workflow permissions&lt;&#x2F;strong&gt;.&lt;br &#x2F;&gt;
+I kept disabled the option: &lt;strong&gt;Allow GitHub Actions to create and approve pull requests&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;After pushing the code to the main branch I let the action run, then I went again into my repo Settings -&amp;gt; Pages. I selected &lt;strong&gt;Deploy from a branch&lt;&#x2F;strong&gt;, chose the &lt;strong&gt;gh-pages&lt;&#x2F;strong&gt; branch, selected &lt;strong&gt;&#x2F; (root)&lt;&#x2F;strong&gt; as folder and clicked &lt;strong&gt;Save&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Now it&#x27;s finally working!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

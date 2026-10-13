@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content=
+    "application/xhtml+xml; charset=iso-8859-1" />
+    <title>
+      4.3.&nbsp;Build Variables
+    </title>
+    <link rel="stylesheet" href="../stylesheets/lfs.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets V1.73.2" />
+    <link rel="stylesheet" href="../stylesheets/lfs-print.css" type=
+    "text/css" media="print" />
+  </head>
+  <body class="clfs" id="clfs-GIT-20240401-x86">
+    <div class="navheader">
+      <h4>
+        Cross-Compiled Linux From Scratch - Embedded - Version
+        GIT-20240401-x86
+      </h4>
+      <h3>
+        Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools
+      </h3>
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="cflags.html" title="Build CFLAGS">Prev</a>
+          <p>
+            Build CFLAGS
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="sysroot.html" title=
+          "Create the Cross Tools Sysroot Directory">Next</a>
+          <p>
+            Create the Cross Tools Sysroot Directory
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-x86">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sect1" lang="en" xml:lang="en">
+      <h1 class="sect1">
+        <a id="ch-cross-tools-variables" name=
+        "ch-cross-tools-variables"></a>4.3. Build Variables
+      </h1>
+      <h4>
+        Setting Host and Target
+      </h4>
+      <p>
+        During the building of the cross-compile tools you will need to set a
+        few variables that will be dependent on your particular needs. You
+        will need to set the target triplet for the target architecture, and
+        the CPU type. If you do not know what triplet or CPU type you want,
+        you can use the table as a reference. Set the command using the
+        method listed below:
+      </p>
+      <pre class="userinput"><kbd class=
+      "command">export CLFS_HOST=$(echo ${MACHTYPE} | sed "s/-[^-]*/-cross/")
+export CLFS_TARGET=<em class="replaceable"><code>[target triplet]</code></em>
+export CLFS_CPU=<em class=
+"replaceable"><code>[cpu type]</code></em></kbd></pre>
+      <div class="table">
+        <a id="idm1064" name="idm1064"></a>
+        <p class="title">
+          <b>Table&nbsp;4.1.&nbsp;Processor Type and Target Triplets</b>
+        </p>
+        <div class="table-contents">
+          <table summary="Processor Type and Target Triplets" border="1">
+            <colgroup>
+              <col />
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>
+                  Processor
+                </th>
+                <th>
+                  Target Triplet
+                </th>
+                <th>
+                  CPU Type
+                </th>
+                <th>
+                  Note
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  486 Compatibles
+                </td>
+                <td>
+                  i486-linux-musl
+                </td>
+                <td>
+                  i486
+                </td>
+                <td>
+                  Intel's i486
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Pentium, K6, 586 Compatibles
+                </td>
+                <td>
+                  i586-linux-musl
+                </td>
+                <td>
+                  i586
+                </td>
+                <td>
+                  Intel Pentium without MMX
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Pentium II, Pentium III, Pentium 4
+                </td>
+                <td>
+                  i686-linux-musl
+                </td>
+                <td>
+                  i686
+                </td>
+                <td>
+                  PentiumPro instruction set
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Athlon
+                </td>
+                <td>
+                  i686-linux-musl
+                </td>
+                <td>
+                  athlon
+                </td>
+                <td>
+                  AMD 32 bit Athlon
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Opteron
+                </td>
+                <td>
+                  x86_64-linux-musl
+                </td>
+                <td>
+                  k8
+                </td>
+                <td>
+                  AMD K8 processors with x86-64
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div><br class="table-break" />
+      <p>
+        Now set the architecture of the CPU:
+      </p>
+      <pre class="userinput"><kbd class=
+      "command">export CLFS_ARCH="x86"</kbd></pre>
+      <p>
+        Now we will add this to <code class="filename">~/.bashrc</code>, just
+        in case you have to exit and restart building later:
+      </p>
+      <pre class="userinput"><kbd class=
+      "command">echo export CLFS_HOST=\""${CLFS_HOST}\"" &gt;&gt; ~/.bashrc
+echo export CLFS_TARGET=\""${CLFS_TARGET}\"" &gt;&gt; ~/.bashrc
+echo export CLFS_ARCH=\""${CLFS_ARCH}\"" &gt;&gt; ~/.bashrc
+echo export CLFS_CPU=\""${CLFS_CPU}\"" &gt;&gt; ~/.bashrc</kbd></pre>
+    </div>
+    <div class="navfooter">
+      <ul>
+        <li class="prev">
+          <a accesskey="p" href="cflags.html" title="Build CFLAGS">Prev</a>
+          <p>
+            Build CFLAGS
+          </p>
+        </li>
+        <li class="next">
+          <a accesskey="n" href="sysroot.html" title=
+          "Create the Cross Tools Sysroot Directory">Next</a>
+          <p>
+            Create the Cross Tools Sysroot Directory
+          </p>
+        </li>
+        <li class="up">
+          <a accesskey="u" href="chapter.html" title=
+          "Chapter&nbsp;4.&nbsp;Constructing Cross-Compile Tools">Up</a>
+        </li>
+        <li class="home">
+          <a accesskey="h" href="../index.html" title=
+          "Cross-Compiled Linux From Scratch - Embedded - Version GIT-20240401-x86">
+          Home</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

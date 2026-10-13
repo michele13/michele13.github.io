@@ -1,0 +1,15 @@
+http://ftp.gnu.org/gnu/binutils/binutils-2.42.tar.xz
+http://busybox.net/downloads/busybox-1.36.1.tar.bz2
+https://github.com/cross-lfs/bootscripts-embedded/archive/master.tar.gz
+http://gcc.gnu.org/pub/gcc/releases/gcc-13.2.0/gcc-13.2.0.tar.xz
+http://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz
+https://github.com/Mic92/iana-etc/releases/download/20240125/iana-etc-20240125.tar.gz
+http://www.kernel.org/pub/linux/kernel/v6.x/linux-6.7.4.tar.xz
+http://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz
+http://ftp.gnu.org/gnu/mpfr/mpfr-4.2.1.tar.xz
+https://musl.libc.org/releases/musl-1.2.5.tar.gz
+http://matt.ucc.asn.au/dropbear/releases/dropbear-2022.83.tar.bz2
+http://www.red-bean.com/~bos/netplug/netplug-1.2.9.2.tar.bz2
+https://hewlettpackard.github.io/wireless-tools/wireless_tools.29.tar.gz
+https://zlib.net/fossils/zlib-1.3.1.tar.gz
+http://patches.clfs.org/embedded-dev/netplug-1.2.9.2-fixes-1.patch
